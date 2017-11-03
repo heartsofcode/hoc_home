@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  get 'static_pages/about'
-
-  get 'static_pages/calendar'
-
-  get 'static_pages/blog'
-
-  get 'static_pages/press'
-
-  get 'static_pages/participate'
-
-  get 'static_pages/contact'
-
-  get 'static_pages/imprint'
-
   root 'static_pages#home'
+
+  get 'about',        to: 'static_pages#about'
+  get 'calendar',     to: 'static_pages#calendar'
+  get 'press',        to: 'static_pages#press'
+  get 'blog',         to: 'static_pages#blog'
+  get 'participate',  to: 'static_pages#participate'
+  get 'contact',      to: 'static_pages#contact'
+  get 'imprint',      to: 'static_pages#imprint'
+
 end
