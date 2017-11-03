@@ -25,8 +25,8 @@ einen Log-In-Bereich für Mitmuschis
 - #### Calendar
   - Member haben Möglichkeit Events zu erstellen, die dann im Kalender erscheinen
 (entweder öffentlich, oder nur für andere Mitglieder sichtbar). 
-- Eine Erinnerungsfunktion erinnert an Events. 
-- nth: Externe können Events für den
+  - Eine Erinnerungsfunktion erinnert an Events. 
+  - nth: Externe können Events für den
 Kalender Vorschlagen, die dann von einem Member gesichtet und
 freigeschaltet werden können.
 - #### Gruppen
