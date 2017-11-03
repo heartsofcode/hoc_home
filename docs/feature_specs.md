@@ -11,6 +11,7 @@ einen Log-In-Bereich für Mitmuschis
 - #### Mitmischen
 - #### Kalender
   - Integration der öffentlichen events aus dem Log-In Bereich
+  - für eingeloggte mitglieder auch interne events sichtbar
 - #### Blog
   - Veröffentlichung von blog posts aus dem login bereich
 - #### Pressespiegel
