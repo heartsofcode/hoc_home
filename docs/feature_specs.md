@@ -9,7 +9,7 @@ einen Log-In-Bereich für Mitmuschis
   - kommende events
 - #### About
 - #### Mitmischen
-    - ##### Mitmuschiantragsformular
+    - Mitmuschiantragsformular
 - #### Kalender
   - Integration der öffentlichen events aus dem Log-In Bereich
 - #### Blog
@@ -23,9 +23,10 @@ einen Log-In-Bereich für Mitmuschis
 - #### Communication
   Kommunikationsmöglichkeiten (zb. Chat, Forum, Gruppenseiten, Wiki) geben
 - #### Calendar
-  Member haben Möglichkeit Events zu erstellen, die dann im Kalender erscheinen
-(entweder öffentlich, oder nur für andere Mitglieder sichtbar). Eine
-Erinnerungsfunktion erinnert an Events. Externe können Events für den
+  - Member haben Möglichkeit Events zu erstellen, die dann im Kalender erscheinen
+(entweder öffentlich, oder nur für andere Mitglieder sichtbar). 
+- Eine Erinnerungsfunktion erinnert an Events. 
+- nth: Externe können Events für den
 Kalender Vorschlagen, die dann von einem Member gesichtet und
 freigeschaltet werden können.
 - #### Gruppen
