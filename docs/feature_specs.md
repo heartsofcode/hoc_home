@@ -38,6 +38,8 @@ und gruppenintern kommunizieren können (also in etwa so wie Gruppen bei
 Facebook).
 - #### Tasks
     Was gibts zu tun und wer macht das?
+- #### Bulletin Board & Announcements
+    Wichtige Mitteilungen mit member/group tagging
 - #### Cloud
   Cloud für Dokumente (Protokolle, Funding Anschreiben, Logo Designs,
 Abrechnungstabellen etc. - das liegt zu unserer Schande momentan alles
@@ -46,6 +48,7 @@ noch bei Google).
   - gemerkte events
   - event erstellen
   - übersicht über communication
+  - Announcements
   - nth: blog eintrag verfassen
   - nth: links zum pressespiegel hinzufügen
 
@@ -60,6 +63,11 @@ schwierig wgn. Zugriff auf Kontodaten, JSON?).
 ## Tech
 - Rails app: Rails v5.1, Ruby 3.1
 - Server: Greenhost
+- https with certbot
+- calendar     
+    - integration with lightning cal API? https://www.mozilla.org/en-US/projects/calendar/     
+    - https://fullcalendar.io/     
+    - fullcalendar gem for rails: https://github.com/bokmann/fullcalendar-rails
 
 ### Gems
 - Internationalization: i18e
