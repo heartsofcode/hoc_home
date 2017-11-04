@@ -1,0 +1,27 @@
+%h1 Listing blogposts
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Author name
+      %th Published at
+      %th
+      %th
+      %th
+
+  %tbody
+    - @blogposts.each do |blogpost|
+      %tr
+        %td= blogpost.title
+        %td= blogpost.description
+        %td= blogpost.author_name
+        %td= show_date(blogpost)
+        %td= link_to 'Show', blogpost
+        %td= link_to 'Edit', edit_blogpost_path(blogpost)
+        %td= link_to 'Destroy', blogpost, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Blogpost', new_blogpost_path

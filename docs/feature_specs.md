@@ -25,8 +25,8 @@ einen Log-In-Bereich für Mitmuschis
   Kommunikationsmöglichkeiten (zb. Chat, Forum, Gruppenseiten, Wiki) geben
 - #### Calendar
   - Member haben Möglichkeit Events zu erstellen, die dann im Kalender erscheinen
-(entweder öffentlich, oder nur für andere Mitglieder sichtbar). 
-  - Eine Erinnerungsfunktion erinnert an Events. 
+(entweder öffentlich, oder nur für andere Mitglieder sichtbar).
+  - Eine Erinnerungsfunktion erinnert an Events.
   - nth: Externe können Events für den
 Kalender Vorschlagen, die dann von einem Member gesichtet und
 freigeschaltet werden können.
@@ -61,6 +61,12 @@ schwierig wgn. Zugriff auf Kontodaten, JSON?).
 - Rails app: Rails v5.1, Ruby 3.1
 - Server: Greenhost
 
+## Frontend Framework
+- Bootstrap, or MaterialDesign, or Foundation
+- Purecss.io
+- Skeleton
+
 ### Gems
-- Internationalization: i18e
 - Log-In: Devise
+- Friendly_id for slugifying blogposts-url
+- Rubocop
