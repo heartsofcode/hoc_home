@@ -1,5 +1,5 @@
 class BlogpostsController < ApplicationController
-  before_action :set_blogpost, only: [:edit, :update, :destroy]
+  before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
 
   # GET /blogposts
   # GET /blogposts.json
@@ -7,10 +7,9 @@ class BlogpostsController < ApplicationController
     @blogposts = Blogpost.all
   end
 
-  # GET /blogposts/1
-  # GET /blogposts/1.json
+  # GET /blogposts/slugged_url
+  # GET /blogposts/slugged_url.json
   def show
-    @blogpost = Blogpost.friendly.find(params[:id])
   end
 
   # GET /blogposts/new
@@ -18,7 +17,7 @@ class BlogpostsController < ApplicationController
     @blogpost = Blogpost.new
   end
 
-  # GET /blogposts/1/edit
+  # GET /blogposts/slugged_url/edit
   def edit
   end
 
@@ -38,8 +37,8 @@ class BlogpostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogposts/1
-  # PATCH/PUT /blogposts/1.json
+  # PATCH/PUT /blogposts/slugged_url
+  # PATCH/PUT /blogposts/slugged_url.json
   def update
     respond_to do |format|
       if @blogpost.update(blogpost_params)
@@ -52,8 +51,8 @@ class BlogpostsController < ApplicationController
     end
   end
 
-  # DELETE /blogposts/1
-  # DELETE /blogposts/1.json
+  # DELETE /blogposts/slugged_url
+  # DELETE /blogposts/slugged_url.json
   def destroy
     @blogpost.destroy
     respond_to do |format|
@@ -65,11 +64,11 @@ class BlogpostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blogpost
-      @blogpost = Blogpost.find(params[:id])
+      @blogpost = Blogpost.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blogpost_params
-      params.require(:blogpost).permit(:title, :description, :author_name, :published_at, :slug)
+      params.require(:blogpost).permit(:title, :description, :author_name, :published_at)
     end
 end
