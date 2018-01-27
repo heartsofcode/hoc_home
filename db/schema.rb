@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104120840) do
+ActiveRecord::Schema.define(version: 20180127142731) do
 
   create_table "blogposts", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "author_name"
+    t.string "display_name"
     t.datetime "published_at"
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
+    t.integer "user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -32,6 +33,24 @@ ActiveRecord::Schema.define(version: 20171104120840) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
