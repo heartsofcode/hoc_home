@@ -3,13 +3,13 @@
 one:
   title: MyString
   description: MyText
-  author_name: MyString
+  display_name: MyString
   published_at: 2017-11-04 12:55:58
   slug: MyString
 
 two:
   title: MyString
   description: MyText
-  author_name: MyString
+  display_name: MyString
   published_at: 2017-11-04 12:55:58
   slug: MyString
