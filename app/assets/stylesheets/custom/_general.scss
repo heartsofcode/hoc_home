@@ -1,0 +1,101 @@
+body { padding-top: 5px;
+   /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.menue {
+ background-color: white;
+ font-family: 'Josefin Sans', sans-serif;
+ border-bottom: none;
+ text-align: center;
+}
+
+p > a,
+h3 > a {
+  box-shadow: 0 -2px 0 #c8c8c8 inset;
+  color: inherit;
+}
+
+p > a:hover {
+ color: #c8c8c8;
+ text-decoration: none;
+}
+
+.navbar .nav,
+.navbar .nav > li {
+ float:none;
+ display:inline-block;
+ *display:inline; /* ie7 fix */
+ *zoom:1; /* hasLayout ie7 trigger */
+ vertical-align: top;
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+   color: #e60000;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+   color: #000;
+   background-color: #FFF;
+}
+
+.tagline {
+ background-color: white;
+}
+
+#logo {
+ height: 120px;
+ margin: 10px;
+}
+
+.content h1{
+ font-family: 'Roboto';
+ font-weight: 300;
+ border-top: 1px #CCCCCC solid;
+ border-bottom: 1px #CCCCCC solid;
+ padding: 12px;
+
+}
+
+h2, h3, h4, h5 {
+ font-family: 'Josefin Sans' , sans-serif;
+ font-weight: 100;
+}
+
+.justify{
+ text-align: justify;
+}
+
+.imgblock > img {
+ display: inline;
+ max-height: 150px;
+}
+
+.content-main-wrapper{
+ margin-bottom: 80px;
+}
+
+.content {
+ font-family: 'Josefin Sans' , sans-serif;
+ font-weight: 300;
+ font-size: 1.2em;
+ text-align: center;
+
+}
+
+.footer {
+   position: fixed;
+   background: white;
+   bottom: 0px;
+   width: 100%;
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer .container {
+ text-align: center;
+}
+
+.footer .container .footer-wrapper{
+ border-top: 1px #CCCCCC solid;
+ padding-top: 10px;
+}

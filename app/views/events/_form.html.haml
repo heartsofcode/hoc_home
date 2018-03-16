@@ -1,0 +1,24 @@
+= form_for @event do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+      %ul
+        - @event.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :start_time
+    = f.datetime_select :start_time
+  .field
+    = f.label :end_time
+    = f.datetime_select :end_time
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.collection_select(:calendar_id, Calendar.all, :id, :name, prompt: "Please select a Calendar")
+  .actions
+    = f.submit 'Save'
