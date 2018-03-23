@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
   def blog
   end
 
+  def advent
+  end
+
   def press
   end
 
