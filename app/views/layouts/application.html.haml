@@ -15,8 +15,18 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  %body
-    %p
+  %body{:class => controller.controller_name}
+    %header
+    .container.content-main-wrapper
+      %nav.navbar{:role => "navigation"}
+        %ul.main-nav
+          %li= link_to 'about', about_path
+          %li= link_to 'kalender', calendars_path
+          %li= link_to 'mitmischen', participate_path
+          %li= link_to 'blog', blog_path
+          %li= link_to 'adventskalender'
+          %li= link_to 'kontakt', contact_path
+      %p
       - if notice
         %p.alert.alert-success= notice
       - if alert
@@ -33,24 +43,6 @@
         |
         \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
 
-    %p
-    / Navigation
-    %nav.menue.navbar.navbar-inverse.navbar-fixed-top
-      .container
-        / Brand and toggle get grouped for better mobile display
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          / <a class="navbar-brand" href="#">heart of code</a>
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-
-        / /.navbar-collapse
-      / /.container
     .container.content-main-wrapper
       .content.row.tagline
         .col-lg-12.text-center
@@ -65,4 +57,12 @@
     .container
       .col-sm-12.footer-wrapper
         %p.text-muted
+          %div
+          %p
+          Follow us on Twitter
+          %a{:href => "https://twitter.com/heartofcode", :title => "Heart of Code on Twitter"} @heartofcode
+          🐦  |  Contribute on Github to
+          %a{:href => "https://github.com/heartsofcode/hoc_home", :title => "Heart of Code code on GitHub"} our Code
+          💻
+        %p
           © 2018 Heart of Code e.V.
