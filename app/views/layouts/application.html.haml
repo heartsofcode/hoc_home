@@ -15,36 +15,45 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  %body{:class => controller.controller_name}
+  %body
     %header
     .container.content-main-wrapper
-      .center.jumbotron
-        %nav.navbar{:role => "navigation"}
-          %ul.main-nav
-            %li= link_to 'about', about_path
-            %li= link_to 'kalender', calendars_path
-            %li= link_to 'mitmischen', participate_path
-            %li= link_to 'blog', blogposts_path
-            %li= link_to 'adventskalender'
-            %li= link_to 'kontakt', contact_path
-        %p
-        - if notice
-          %p.alert.alert-success= notice
-        - if alert
-          %p.alert.alert-danger= alert
-        - if user_signed_in?
-          Logged in as
-          = succeed "." do
-            %strong= current_user.email
-          = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-          |
-          \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
-        - else
-          = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-          |
-          \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
-
-      = image_tag "heartofcode42.jpg", id:"logo"
+      %nav.navbar.navbar-default
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Heart of Code
+        / Collection of nav links and other content for toggling
+        #navbarCollapse.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{:href => "/about"} about
+            %li
+              %a{:href => "/blogposts"} blog
+            %li
+              %a{:href => "/calendars"} kalender
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %p
+              - if notice
+                %p.alert.alert-success= notice
+              - if alert
+                %p.alert.alert-danger= alert
+              - if user_signed_in?
+                Logged in as
+                = succeed "." do
+                  %strong= current_user.email
+                = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+                \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
+              - else
+                = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+                \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
+      %br
+        = image_tag "heartofcode42.jpg", id:"logo"
 
       = yield
 
