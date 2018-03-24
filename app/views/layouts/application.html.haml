@@ -26,19 +26,24 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Heart of Code
         / Collection of nav links and other content for toggling
         #navbarCollapse.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
               %a{:href => "/about"} about
             %li
+              %a{:href => "/calendars"} kalender
+            %li
+              %a{:href => "/participate"} mitmischen
+            %li
               %a{:href => "/blogposts"} blog
             %li
-              %a{:href => "/calendars"} kalender
+              %a{:href => "/advent"} adventskalender
+            %li
+              %a{:href => "/contact"} kontakt
+
           %ul.nav.navbar-nav.navbar-right
             %li
-              %p
               - if notice
                 %p.alert.alert-success= notice
               - if alert
@@ -50,8 +55,10 @@
                 = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
                 \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
               - else
-                = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-                \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
+                %li
+                  %a{:href => "/users/sign_up"} Sign up
+                %li
+                  %a{:href => "/users/sign_in"} Login
       %br
         = image_tag "heartofcode42.jpg", id:"logo"
 
