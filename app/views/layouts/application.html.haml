@@ -41,24 +41,24 @@
               %a{:href => "/advent"} adventskalender
             %li
               %a{:href => "/contact"} kontakt
-
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              - if notice
-                %p.alert.alert-success= notice
-              - if alert
-                %p.alert.alert-danger= alert
-              - if user_signed_in?
-                Logged in as
-                = succeed "." do
-                  %strong= current_user.email
-                = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-                \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
-              - else
-                %li
-                  %a{:href => "/users/sign_up"} Sign up
-                %li
-                  %a{:href => "/users/sign_in"} Login
+          /
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                - if notice
+                  %p.alert.alert-success= notice
+                - if alert
+                  %p.alert.alert-danger= alert
+                - if user_signed_in?
+                  Logged in as
+                  = succeed "." do
+                    %strong= current_user.email
+                  = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+                  \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
+                - else
+                  %li
+                    %a{:href => "/users/sign_up"} Sign up
+                  %li
+                    %a{:href => "/users/sign_in"} Login
       %br
         = image_tag "heartofcode42.jpg", id:"logo"
 
