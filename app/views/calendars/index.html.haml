@@ -1,21 +1,14 @@
 %h1
-  Zückt die Kalender!
+  Kalender hier Kalender da
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
 
+%thead
   %tbody
     - @calendars.each do |calendar|
       %tr
-        %td= calendar.name
-        %td= link_to 'Show', calendar
-        %td= link_to 'Edit', edit_calendar_path(calendar)
-        %td= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' }
+      %h3
+        %td= link_to calendar.name, calendar
+        %br
 
 %br
 
