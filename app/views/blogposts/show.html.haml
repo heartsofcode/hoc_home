@@ -12,6 +12,10 @@
 %p
   %b Published at:
   = show_date(@blogpost)
+%p
+  %b Image:
+  = image_tag @blogpost.image_url(:original)
+
 
 = link_to 'Edit', edit_blogpost_path(@blogpost)
 \|

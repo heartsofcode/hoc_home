@@ -1,0 +1,8 @@
+- if target.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@blogpost.errors.count, "error")
+      prohibited this blogpost from being saved:
+    %ul
+      - @blogpost.errors.full_messages.each do |message|
+        %li= message
