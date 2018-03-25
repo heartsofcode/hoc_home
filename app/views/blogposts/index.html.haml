@@ -1,13 +1,15 @@
 %p
-  %thead
-    %tbody
-      - @blogposts.each do |blogpost|
-        %tr
-          %h1
-            %td= blogpost.title
-          %p
-            by
-            %td= blogpost.get_display_name
-          %td= show_date(blogpost)
-          %br
-          %td= blogpost.description
+.row
+  .col-md-10.col-md-offset-1.blog
+    %thead
+      %tbody
+        - @blogposts.each do |blogpost|
+          %tr
+            %h1
+              %td= blogpost.title
+            %p
+              by
+              %td= blogpost.get_display_name
+            %td= show_date(blogpost)
+            %br
+            %td= blogpost.description
