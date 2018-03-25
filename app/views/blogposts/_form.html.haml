@@ -1,4 +1,5 @@
 = form_for @blogpost do |f|
+  = render "error_messages", target: @blogpost
   - if @blogpost.errors.any?
     #error_explanation
       %h2= "#{pluralize(@blogpost.errors.count, "error")} prohibited this blogpost from being saved:"
@@ -18,5 +19,14 @@
   .field
     = f.label :published_at
     = f.datetime_select :published_at
+  .field
+    = f.label :image
+    = f.file_field :image
+  - if @blogpost.image_data?
+    .field
+      = image_tag @blogpost.image_url(:thumb)
+    .field
+      Remove attachment: #{f.check_box :remove_image}
+
   .actions
     = f.submit 'Save'

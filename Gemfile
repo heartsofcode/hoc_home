@@ -41,6 +41,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem "simple_calendar", "~> 2.0"
 
+# To extract the image dimensions
+gem 'fastimage'
+# Required for image versioning and includes helpers for ImageMagick
+gem 'image_processing'
+# Required for image versioning
+gem 'mini_magick'
+# Shrine :)
+gem 'shrine'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

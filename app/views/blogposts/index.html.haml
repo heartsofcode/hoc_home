@@ -7,11 +7,13 @@
           %tr
             %h1
               %td= link_to blogpost.title, blogpost
-
-
+            %td= image_tag blogpost.image_url(:small)
             %p
-              by
-              %td= blogpost.get_display_name
-            %td= show_date(blogpost)
+            %td
+              = show_date(blogpost)
+              von
+              = blogpost.get_display_name
+            %br
+            ***
             %br
             %td= blogpost.description
