@@ -1,23 +1,16 @@
-%h1 Listing events
+%h1
+  Zückt die Kalender!
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Start time
-      %th End time
-      %th Location
-      %th
-      %th
-      %th
-
+%thead
   %tbody
     - @events.each do |event|
       %tr
-        %td= event.name
-        %td= event.start_time
-        %td= event.end_time
+        %td= nicify_date(event)
+
+        %h2
+          %td= event.name
         %td= event.location
+        %br
         %td= link_to 'Show', event
         %td= link_to 'Edit', edit_event_path(event)
         %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
