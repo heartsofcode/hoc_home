@@ -1,2 +1,12 @@
 %h1
   24x Hallelujah
+
+.advent-container
+  /{% for item in site.adventskalender %}
+  .hidden
+    %a.advent-btn{:href => ""}
+      %img{:src => ""}/
+      .text
+        .hidden
+          %strong
+  /{% endfor %}
