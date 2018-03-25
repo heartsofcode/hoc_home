@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
   def press
   end
 
-  def participate
+  def mitmischen
   end
 
   def contact
