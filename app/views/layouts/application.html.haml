@@ -17,11 +17,14 @@
 
   %body
     .container= render 'layouts/navigation'
-    .content.container
-      %a{:href => "/", :title => "…the most beautiful and revolutionary ship ever built."}
-        = image_tag "heartofcode42.jpg", id:"logo"
 
-        .content.container
+    .container.content-main-wrapper
+      .content.row.tagline
+        .col-lg-12.text-center
+          %a{:href => "/", :title => "…the most beautiful and revolutionary ship ever built."}
+            = image_tag "heartofcode42.jpg", id:"logo"
+      .row.content
+        .container
           = yield
 
   %footer
