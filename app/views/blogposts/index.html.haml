@@ -6,7 +6,9 @@
         - @blogposts.each do |blogpost|
           %tr
             %h1
-              %td= blogpost.title
+              %td= link_to blogpost.title, blogpost
+
+
             %p
               by
               %td= blogpost.get_display_name
