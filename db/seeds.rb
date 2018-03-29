@@ -5,11 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name: 'Lailai', email: 'luai@lai.lai', password: 'lailailai')
-User.create!(name: 'Lili', email: 'luei@lei.lei', password: 'lilili')
+#
+def img_uploader
+  file = File.new(Rails.root.join('app/assets/images/seed/dropemoji.png'))
+  ImageUploader.new(:store).upload(file).to_json
+end
 
-Blogpost.create!(user_id: 1, title: 'grocery shopping', description: 'pickles, eggs, red onion')
-Blogpost.create!(user_id: 1, title: 'wash the car')
-Blogpost.create!(user_id: 1, title: 'register kids for school', description: 'Register Kira for Ruby Junior High and Caleb for Rails High School')
-Blogpost.create!(user_id: 2, title: 'check engine light', description: 'The check engine light is on in the Tacoma')
-Blogpost.create!(user_id: 2, title: 'dog groomers', description: 'Take Pinky and Redford to the groomers on Wednesday the 23rd')
+User.create(name: 'admina', email: 'hoc@admina.hoc', password: 'admina')
+User.create(name: 'hoc', email: 'hoc@hoc.hoc', password: 'heartofcode')
+
+5.times do |p|
+  Blogpost.create(user_id: 1, title: "Blogpost #{p}", description: "Awesome Post", image_data: img_uploader)
+end
+
+5.times do |c|
+  Calendar.create(name: "Kalender #{c}")
+end
+
+5.times do |e|
+  Event.create(name: "Event #{e}", location: "Baumschiff", calendar_id: 11)
+end
