@@ -11,15 +11,15 @@ class StaticPagesController < ApplicationController
   def advent
   end
 
-  def press
+  def presse
   end
 
   def mitmischen
   end
 
-  def contact
+  def kontakt
   end
 
-  def imprint
+  def impressum
   end
 end
