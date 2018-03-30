@@ -13,7 +13,7 @@
 %p
   = @blogpost.description
 
-/
+- if user_signed_in?
   = link_to 'Edit', edit_blogpost_path(@blogpost)
   \|
-  = link_to 'Back', blogposts_path
+= link_to 'Back', blogposts_path

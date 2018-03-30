@@ -7,7 +7,7 @@
     = event.name
     = event.location
 
-
-= link_to 'Edit', edit_calendar_path(@calendar)
-\|
+- if user_signed_in?
+  = link_to 'Edit', edit_calendar_path(@calendar)
+  \|
 = link_to 'Back', calendars_path
