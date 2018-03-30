@@ -1,0 +1,16 @@
+.footer {
+   position: fixed;
+   background: white;
+   bottom: 0px;
+   width: 100%;
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer .container {
+ text-align: center;
+}
+
+.footer .container .footer-wrapper{
+ border-top: 1px #CCCCCC solid;
+ padding-top: 10px;
+}

@@ -1,16 +1,29 @@
 /*kalender*/
 
+.calendar-heading {
+  font-size: 2em;
+  }
+
 #eventlist { list-style:none; }
 #eventlist li { list-style:none; padding:3px; border-bottom:2px solid #eee;}
 .eventtitle {
   font-size: 2em;
 }
 
+.calendar-heading a {
+  color: #de1818;
+}
+
+a:hover {
+ color: #c8c8c8;
+ text-decoration: none;
+}
+
 .blog-bild {
   height: 200px;
 }
 
-.pagination li > a {
-  color: #999;;
 
+.pagination li > a {
+  color: #de1818;
 }
