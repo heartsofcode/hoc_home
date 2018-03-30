@@ -12,10 +12,10 @@
           %td= link_to event.name, event
         %td= event.location
         %br
-        /
+        - if user_signed_in?
           %td= link_to 'Edit', edit_event_path(event)
           %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
-        %br
-  /
-    %br
-    = link_to 'New Event', new_event_path
+          %br
+- if user_signed_in?
+  %br
+  = link_to 'New Event', new_event_path

@@ -12,4 +12,5 @@
 
 %br
 
-= link_to 'New Calendar', new_calendar_path
+- if user_signed_in?
+  = link_to 'New Calendar', new_calendar_path
