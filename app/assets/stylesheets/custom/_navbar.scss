@@ -1,0 +1,13 @@
+.navbar .nav,
+.navbar .nav > li {
+ float:none;
+ display:inline-block;
+ *display:inline; /* ie7 fix */
+ *zoom:1; /* hasLayout ie7 trigger */
+ vertical-align: top;
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+   color: #e60000;
+}
