@@ -1,8 +1,8 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = @event.name
+  %b
+    = @event.name
 %p
   - if @event.location_url?
     %a{:href => @event.location_url}
@@ -28,8 +28,10 @@
     = nicify_end_time(@event)
 
 %p
+  %b
+  = @event.calendar.name
 
 - if user_signed_in?
-  = link_to 'Edit', edit_events_path(@event)
+  = link_to 'Edit', edit_event_path
   \|
 = link_to 'Back', events_path
