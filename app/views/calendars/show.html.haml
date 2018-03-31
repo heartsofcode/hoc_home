@@ -1,7 +1,7 @@
 %p#notice= notice
 
 = month_calendar events: @events do |date, events|
-  = date
+  = date.day
 
   - events.each do |event|
     = event.name
@@ -10,4 +10,4 @@
 - if user_signed_in?
   = link_to 'Edit', edit_calendar_path(@calendar)
   \|
-= link_to 'Back', calendars_path
+= link_to 'All calendars', calendars_path

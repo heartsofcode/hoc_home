@@ -19,6 +19,9 @@
     = f.label :location
     = f.text_field :location
   .field
+    = f.label :location_url
+    = f.text_field :location_url
+  .field
     = f.collection_select(:calendar_id, Calendar.all, :id, :name, prompt: "Please select a Calendar")
   .actions
     = f.submit 'Save'

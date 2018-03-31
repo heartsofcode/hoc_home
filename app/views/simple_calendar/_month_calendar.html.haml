@@ -5,6 +5,10 @@
       = t('date.month_names')[start_date.month]
       = start_date.year
     = link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view
+    %p
+    %br
+    %span.calendar-title
+      = @calendar.name
   %table.table.table-striped
     %thead
       %tr

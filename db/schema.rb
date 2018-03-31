@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325184814) do
+ActiveRecord::Schema.define(version: 20180331211837) do
 
   create_table "blogposts", force: :cascade do |t|
     t.string "title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180325184814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "calendar_id"
+    t.string "location_url"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
