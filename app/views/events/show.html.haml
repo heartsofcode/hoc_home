@@ -4,16 +4,29 @@
   %b Name:
   = @event.name
 %p
-  %b Start time:
-  = @event.start_time
   - if @event.location_url?
     %a{:href => @event.location_url}
       = @event.location
   - else
     = @event.location
 %p
-  %b End time:
-  = @event.end_time
+  %b
+    = nicify_start_date(@event)
+  um
+  %b
+    = nicify_start_time(@event)
+
+  - if nicify_start_date(@event) == nicify_end_date(@event)
+    bis
+
+  - else
+    %br bis
+    %b
+      = nicify_end_date(@event)
+    um
+  %b
+    = nicify_end_time(@event)
+
 %p
 
 - if user_signed_in?
