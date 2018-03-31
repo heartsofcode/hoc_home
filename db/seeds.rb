@@ -18,9 +18,9 @@ User.create(name: 'hoc', email: 'hoc@hoc.hoc', password: 'heartofcode')
   Blogpost.create(user_id: 1, title: "Blogpost #{p}", description: "Awesome Post", image_data: img_uploader)
 end
 
-5.times do |c|
-  Calendar.create(name: "Kalender #{c}")
-end
+Calendar.create(name: "HEART OF CODE")
+Calendar.create(name: "Berlin Events")
+Calendar.create(name: "Planet Earth Events")
 
 5.times do |e|
   Event.create(name: "Event #{e}", location: "Baumschiff", calendar_id: 11)
