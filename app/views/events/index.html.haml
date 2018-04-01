@@ -4,18 +4,22 @@
 %thead
   %tbody
     - @events.each do |event|
-      *
-      %br
       %tr
-        %td= nicify_start_date(event)
         %h3
           %td= link_to event.name, event
-        %td= event.location
-        %br
+        %b
+          %td= nicify_start_date(event)
+          ·
+          %td= event.location
+        - if event.description?
+          %br= event.description
         - if user_signed_in?
+          %br
           %td= link_to 'Edit', edit_event_path(event)
           %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
-          %br
+        %br
+          *
+
 - if user_signed_in?
-  %br
-  = link_to 'New Event', new_event_path
+  %p
+    = link_to 'New Event', new_event_path
