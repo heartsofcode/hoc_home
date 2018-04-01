@@ -26,6 +26,11 @@
     um
   %b
     = nicify_end_time(@event)
+- if @event.recurring?
+  Recurring Event:
+  Every
+  = @event.recurring[:validations]
+  = @event.recurring[:rule_type]
 %p
   = @event.description
 %p

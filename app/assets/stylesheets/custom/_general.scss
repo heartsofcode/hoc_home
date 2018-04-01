@@ -48,6 +48,10 @@ h2, h3, h4, h5 {
  font-weight: 300;
 }
 
+.center-text > p, b, h2 {
+  text-align: center;
+}
+
 .justify{
  text-align: justify;
 }

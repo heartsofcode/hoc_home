@@ -19,6 +19,9 @@
     = f.label :end_time
     = f.datetime_select :end_time
   .field
+    = f.label :recurring
+    = f.select_recurring :recurring
+  .field
     = f.label :location
     = f.text_field :location
   .field
