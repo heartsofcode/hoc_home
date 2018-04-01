@@ -2,10 +2,10 @@
 
 = month_calendar events: @events do |date, events|
   = date.day
-
+  %br
   - events.each do |event|
-    = event.name
-    = event.location
+    = link_to event.name, event_path(event)
+    %br
 
 - if user_signed_in?
   = link_to 'Edit', edit_calendar_path(@calendar)

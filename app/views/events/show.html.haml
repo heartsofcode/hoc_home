@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %p
-  %b
+  %h1
     = @event.name
 %p
   - if @event.location_url?
@@ -26,7 +26,8 @@
     um
   %b
     = nicify_end_time(@event)
-
+%p
+  = @event.description
 %p
   %b
   = @event.calendar.name
@@ -34,4 +35,4 @@
 - if user_signed_in?
   = link_to 'Edit', edit_event_path
   \|
-= link_to 'Back', events_path
+= link_to 'All Events', events_path

@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.not_yet_happened.order("start_time ASC")
   end
 
   # GET /events/1
@@ -70,6 +70,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :start_time, :end_time, :location, :location_url, :calendar_id)
+      params.require(:event).permit(:name, :description, :start_time, :end_time, :location, :location_url, :calendar_id)
     end
 end
