@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331222834) do
+ActiveRecord::Schema.define(version: 20180401103725) do
 
   create_table "blogposts", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180331222834) do
     t.integer "calendar_id"
     t.string "location_url"
     t.text "description"
+    t.text "recurring"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

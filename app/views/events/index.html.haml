@@ -1,24 +1,27 @@
 %h1
   Zückt die Kalender!
 
-%thead
-  %tbody
-    - @events.each do |event|
-      %tr
-        %h3
-          %td= link_to event.name, event
-        %b
-          %td= nicify_start_date(event)
-          ·
-          %td= event.location
-        - if event.description?
-          %br= event.description
-        - if user_signed_in?
-          %br
-          %td= link_to 'Edit', edit_event_path(event)
-          %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
-        %br
-          *
+#eventlist
+- @events.each do |event|
+
+  %h4
+    = nicify_start_date(event)
+    - if event.recurring?
+      Recurring Event
+    ·
+    = event.location
+  %h2
+    = link_to event.name, event_path(event.id, time: event.start_time)
+  - if event.description?
+    = event.description
+  %p
+    = link_to event.calendar.name, calendar_path(event)
+  - if user_signed_in?
+    %br
+    = link_to 'Edit', edit_event_path(event)
+    = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+  %br
+    *
 
 - if user_signed_in?
   %p

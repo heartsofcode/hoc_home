@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.not_yet_happened.order("start_time ASC")
+    @calendar_events = @events.flat_map{ |e| e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)}
   end
 
   # GET /events/1
@@ -70,6 +71,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :start_time, :end_time, :location, :location_url, :calendar_id)
+      params.require(:event).permit(:name, :description, :start_time, :end_time, :recurring, :location, :location_url, :calendar_id)
     end
 end
