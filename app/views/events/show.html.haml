@@ -10,8 +10,11 @@
   - else
     = @event.location
 %p
-  %b
-    = prettify(@event)[0]
+  - if @event.recurring?
+    = @event.rule.to_s
+  - else
+    %b
+      = prettify(@event)[0]
   um
   %b
     = prettify(@event)[1]
@@ -26,8 +29,6 @@
     um
   %b
     = prettify(@event)[3]
-- if @event.recurring?
-  = @event.rule.to_s
 %p
   = @event.description
 %p
