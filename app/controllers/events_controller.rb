@@ -6,12 +6,17 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.not_yet_happened.order("start_time ASC")
-    @calendar_events = @events.flat_map{ |e| e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)}
+    @hoc_events = Calendar.find(1).events
   end
 
-  # GET /events/1
+  # GEmeT /events/1
   # GET /events/1.json
   def show
+    begin
+      @time = Time.parse(params[:time])
+    rescue
+      @time = @event.start_time
+    end
   end
 
   # GET /events/new

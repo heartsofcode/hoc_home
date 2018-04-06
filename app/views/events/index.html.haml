@@ -2,19 +2,18 @@
   Zückt die Kalender!
 
 #eventlist
-- @events.each do |event|
+- @hoc_events.each do |event|
+  %h2
+    = link_to event.name, event_path(event.id, time: event.start_time)
 
   %h4
     - if event.recurring?
       = event.rule.to_s
     ·
     = event.location
-  %h2
-    = link_to event.name, event_path(event.id, time: event.start_time)
   - if event.description?
     = event.description
   %p
-    = link_to event.calendar.name, calendar_path(event)
   - if user_signed_in?
     %br
     = link_to 'Edit', edit_event_path(event)
