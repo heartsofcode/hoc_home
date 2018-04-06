@@ -12,16 +12,54 @@ def img_uploader
 end
 
 User.create(name: 'admina', email: 'hoc@admina.hoc', password: 'admina')
-User.create(name: 'hoc', email: 'hoc@hoc.hoc', password: 'heartofcode')
+User.create(name: 'n00bie', email: 'hoc@n00bie.hoc', password: 'n00bie')
 
 5.times do |p|
   Blogpost.create(user_id: 1, title: "Blogpost #{p}", description: "Awesome Post", image_data: img_uploader)
 end
 
-Calendar.create(name: "HEART OF CODE")
-Calendar.create(name: "Berlin Events")
-Calendar.create(name: "Planet Earth Events")
+Calendar.create(name: "HEART OF CODE Kalender")
+Calendar.create(name: "Berlin Kalender")
+Calendar.create(name: "Planet Earth Kalender")
 
-5.times do |e|
-  Event.create(name: "Event #{e}", location: "Baumschiff", calendar_id: 11)
-end
+Event.create(
+  name: "Damensalon",
+  start_time: "2018-04-05 19:30:00",
+  end_time: "2018-04-05 22:30:00",
+  location: "Baumschiff",
+  calendar_id: 1,
+  location_url: "https://twitter.com/heartofcode",
+  description: "Der allwöchentliche Damensalon ist die Schnupperstunde unter den Heart of Code Events.",
+  recurring: {
+    interval: 1,
+    until: "null",
+    count: "null",
+    validations: {
+      day: [4]
+      },
+    rule_type: "IceCube::WeeklyRule",
+    week_start: 0
+  }
+)
+
+Event.create(
+  name: "Netzpolitischer Abend",
+  start_time: "2018-04-03 19:30:00",
+  end_time: "2018-04-03 21:30:00",
+  location: "c-base",
+  calendar_id: 2,
+  location_url: "https://twitter.com/digiges",
+  description: "Monatliches Meetup zum Thema digitale Zivilgesellschaft in Berlin.",
+  recurring: { }
+)
+
+Event.create(
+  name: "IFF",
+  start_time: "2019-03-04 00:00:00",
+  end_time: "2019-03-08 23:59:59",
+  location: "Valencia, Spain",
+  calendar_id: 3,
+  location_url: "https://internetfreedomfestival.org",
+  description: "5 day conference for people interested in freedom of the internet and cybersecurity on a global level.",
+  recurring: { }
+)
