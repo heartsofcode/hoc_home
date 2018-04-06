@@ -5,9 +5,8 @@
 - @events.each do |event|
 
   %h4
-    = nicify_start_date(event)
     - if event.recurring?
-      Recurring Event
+      = event.rule.to_s
     ·
     = event.location
   %h2
@@ -19,6 +18,7 @@
   - if user_signed_in?
     %br
     = link_to 'Edit', edit_event_path(event)
+    \|
     = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
   %br
     *

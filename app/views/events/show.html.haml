@@ -11,26 +11,23 @@
     = @event.location
 %p
   %b
-    = nicify_start_date(@event)
+    = prettify(@event)[0]
   um
   %b
-    = nicify_start_time(@event)
+    = prettify(@event)[1]
 
-  - if nicify_start_date(@event) == nicify_end_date(@event)
+  - if prettify(@event)[0] == prettify(@event)[2]
     bis
 
   - else
-    %br bis
+    bis
     %b
-      = nicify_end_date(@event)
+      = prettify(@event)[2]
     um
   %b
-    = nicify_end_time(@event)
+    = prettify(@event)[3]
 - if @event.recurring?
-  Recurring Event:
-  Every
-  = @event.recurring[:validations]
-  = @event.recurring[:rule_type]
+  = @event.rule.to_s
 %p
   = @event.description
 %p
@@ -39,5 +36,9 @@
 
 - if user_signed_in?
   = link_to 'Edit', edit_event_path
+  %br
+  = link_to "Delete All Events", event_path(@event), method: :delete
   \|
+  = link_to "Delete Just This Event", event_exceptions_path(@event, event_exception: {time: @time}), method: :post
+  %br
 = link_to 'All Events', events_path
