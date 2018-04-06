@@ -11,7 +11,9 @@ class CalendarsController < ApplicationController
   # GET /calendars/1
   # GET /calendars/1.json
   def show
-    @events = @calendar.events
+    @calendar_events = @calendar.events.flat_map do |e|
+      e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
+    end 
   end
 
   # GET /calendars/new

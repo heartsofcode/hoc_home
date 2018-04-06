@@ -10,8 +10,11 @@
   - else
     = @event.location
 %p
-  %b
-    = prettify(@event)[0]
+  - if @event.recurring?
+    = @event.rule.to_s
+  - else
+    %b
+      = prettify(@event)[0]
   um
   %b
     = prettify(@event)[1]
@@ -26,8 +29,6 @@
     um
   %b
     = prettify(@event)[3]
-- if @event.recurring?
-  = @event.rule.to_s
 %p
   = @event.description
 %p
@@ -36,9 +37,7 @@
 
 - if user_signed_in?
   = link_to 'Edit', edit_event_path
-  %br
-  = link_to "Delete All Events", event_path(@event), method: :delete
   \|
-  = link_to "Delete Just This Event", event_exceptions_path(@event, event_exception: {time: @time}), method: :post
+  = link_to "Delete", event_path(@event), method: :delete
   %br
 = link_to 'All Events', events_path

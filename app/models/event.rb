@@ -27,11 +27,11 @@ class Event < ApplicationRecord
     if recurring.empty?
       [self]
     else
-      start_date = start.beginning_of_month.beginning_of_week
       end_date = start.end_of_month.end_of_week
-      schedule(start_date).occurrences(end_date).map do |date|
+      schedule(start_time).occurrences(end_date).map do |date|
         Event.new(id: id, name: name, start_time: date)
       end
     end
   end
+
 end
