@@ -20,13 +20,20 @@ $ bundle install
 Next, migrate the database:
 
 ```
-$ rails db:migrate
+$ rake db:migrate
 ```
 
 Finally, run the test suite to verify that everything is working correctly:
 
 ```
 $ bundle exec rspec
+```
+
+You can fill the database with some test data (we prepared that for you :) )
+
+
+```
+$ rake db:seed
 ```
 
 If the test suite passes, you'll be ready to run the app in a local server:
