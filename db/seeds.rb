@@ -18,9 +18,8 @@ User.create(name: 'n00bie', email: 'hoc@n00bie.hoc', password: 'n00bie')
   Blogpost.create(user_id: 1, title: "Blogpost #{p}", description: "Awesome Post", image_data: img_uploader)
 end
 
-Calendar.create(name: "HEART OF CODE Kalender")
-Calendar.create(name: "Berlin Kalender")
-Calendar.create(name: "Planet Earth Kalender")
+Calendar.create(name: "Heart of Code Events")
+Calendar.create(name: "Andere Events")
 
 Event.create(
   name: "Damensalon",
@@ -58,7 +57,7 @@ Event.create(
   start_time: "2019-03-04 00:00:00",
   end_time: "2019-03-08 23:59:59",
   location: "Valencia, Spain",
-  calendar_id: 3,
+  calendar_id: 2,
   location_url: "https://internetfreedomfestival.org",
   description: "5 day conference for people interested in freedom of the internet and cybersecurity on a global level.",
   recurring: { }
