@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   get 'about',              to: 'static_pages#about'
   get 'mitmischen',         to: 'static_pages#mitmischen'
-  get 'advent',             to: 'static_pages#advent'
   get 'kontakt',            to: 'static_pages#kontakt'
   get 'nussletter',         to: 'static_pages#newsletter'
   get 'satzung',            to: 'static_pages#satzung'
