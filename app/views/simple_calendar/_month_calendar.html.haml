@@ -1,14 +1,15 @@
 .simple-calendar
+  .calendar-heading
+    %span.calendar-title
+    = @calendar.name
   .calendar-navigation
-    = link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: "button btn btn-light", type: "button"
+    = link_to t('simple_calendar.previous', default: 'zurück'), calendar.url_for_previous_view, class: "btn btn-md"
     %span.calendar-title
       = t('date.month_names')[start_date.month]
       = start_date.year
-    = link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: "btn btn-light", type: "button"
-    %p
-  .calendar-heading
-    %span.calendar-title
-      = @calendar.name
+
+      = link_to t('simple_calendar.next', default: 'vor'), calendar.url_for_next_view, class: "btn btn-light btn-md"
+
   %table.table.table-striped
     %thead
       %tr
