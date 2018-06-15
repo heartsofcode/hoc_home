@@ -5,7 +5,7 @@
     = @event.name
 %p
   - if @event.location_url?
-    %a{:href => @event.location_url}
+    %a{href: @event.location_url}
       = @event.location
   - else
     = @event.location

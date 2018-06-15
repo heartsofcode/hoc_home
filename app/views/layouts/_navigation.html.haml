@@ -12,15 +12,15 @@
         #navbarCollapse.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => "/about"} about
+              %a{href: "/about"} about
             %li
-              %a{:href => "/calendars/1"} kalender
+              %a{href: "/calendars/1"} kalender
             %li
-              %a{:href => "/mitmischen"} mitmischen
+              %a{href: "/mitmischen"} mitmischen
             %li
-              %a{:href => "/blogposts"} blog
+              %a{href: "/blogposts"} blog
             %li
-              %a{:href => "/kontakt"} kontakt
+              %a{href: "/kontakt"} kontakt
             %li
               - if notice
                 %p.alert.alert-success= notice
@@ -34,6 +34,6 @@
                 \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
               - else
                 %li
-                  %a{:href => "/users/sign_up"} Sign up
+                  %a{href: "/users/sign_up"} Sign up
                 %li
-                  %a{:href => "/users/sign_in"} Login
+                  %a{href: "/users/sign_in"} Login
