@@ -42,6 +42,26 @@ Event.create(
 )
 
 Event.create(
+  name: "Python",
+  start_time: "2018-06-12 19:30:00",
+  end_time: "2018-06-12 22:30:00",
+  location: "Baumschiff",
+  calendar_id: 1,
+  location_url: "https://twitter.com/heartofcode",
+  description: "Python Study Group",
+  recurring: {
+    interval: 2,
+    until: "null",
+    count: "null",
+    validations: {
+      day: [2]
+      },
+    rule_type: "IceCube::WeeklyRule",
+    week_start: 0
+  }
+)
+
+Event.create(
   name: "Netzpolitischer Abend",
   start_time: "2018-04-03 19:30:00",
   end_time: "2018-04-03 21:30:00",
@@ -49,7 +69,16 @@ Event.create(
   calendar_id: 2,
   location_url: "https://twitter.com/digiges",
   description: "Monatliches Meetup zum Thema digitale Zivilgesellschaft in Berlin.",
-  recurring: { }
+  recurring: {
+    interval: 1,
+    until: "null",
+    count: "null",
+    validations: {
+      day: [2]
+      },
+    rule_type: "IceCube::WeeklyRule",
+    week_start: 0
+  }
 )
 
 Event.create(
