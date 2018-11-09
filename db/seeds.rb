@@ -19,7 +19,8 @@ User.create(name: 'n00bie', email: 'hoc@n00bie.hoc', password: 'n00bie')
 end
 
 Calendar.create(name: "Heart of Code Events")
-Calendar.create(name: "Andere Events")
+Calendar.create(name: "Other Events")
+Calendar.create(name: "All Events", show_all_events: true)
 
 Event.create(
   name: "Damensalon",
@@ -80,6 +81,18 @@ Event.create(
     week_start: 0
   }
 )
+
+Event.create(
+  name: "CCC",
+  start_time: "2018-12-27 00:00:00",
+  end_time: "2018-12-30 23:59:59",
+  location: "Leipzig, Germany",
+  calendar_id: 2,
+  location_url: "https://ccc.org",
+  description: "Chaos Communication Congress, 4 day conference including a big Heart of Code and F.U.C.K. assembly.",
+  recurring: { }
+)
+
 
 Event.create(
   name: "IFF",
