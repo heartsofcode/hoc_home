@@ -4,7 +4,7 @@
     = @calendar.name
 
   - @inactive_calendars.each do |calendar|
-    = link_to calendar.name, calendar_path(calendar)
+    = link_to calendar.name, calendar_path(calendar), class: "btn btn-default"
 
   .calendar-navigation
     = link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, class: "btn btn-md"
