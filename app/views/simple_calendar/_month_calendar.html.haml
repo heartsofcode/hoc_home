@@ -3,7 +3,7 @@
     %span.calendar-title
     = @calendar.name
 
-  - @inactive_calendars.each do |calendar|
+  - @other_calendars.each do |calendar|
     = link_to calendar.name, calendar_path(calendar), class: "btn btn-default"
 
   .calendar-navigation

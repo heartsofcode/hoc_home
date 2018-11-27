@@ -8,12 +8,7 @@ class CalendarsController < ApplicationController
 
   # GET /calendars/1
   def show
-    @inactive_calendars = []
-    Calendar.all.each do |cal|
-      unless cal == @calendar
-        @inactive_calendars << cal
-      end
-    end
+    @other_calendars = Calendar.where.not(id: @calendar.id)
     if @calendar.show_all_events?
       @events = Event.all.flat_map do |event|
         event.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
