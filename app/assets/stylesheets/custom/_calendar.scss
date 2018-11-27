@@ -2,7 +2,14 @@
 
 .calendar-heading {
   font-size: 2em;
+  padding-bottom: 20px; 
   }
+
+.calendar-navigation {
+  font-size: 1em;
+  font-weight: bold;
+}
+
 
 #eventlist { list-style:none; }
 #eventlist li { list-style:none; padding:3px; border-bottom:2px solid #eee;}

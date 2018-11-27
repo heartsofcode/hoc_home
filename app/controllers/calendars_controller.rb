@@ -1,19 +1,23 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+  before_action :set_calendar, except: [:index]
 
   # GET /calendars
-  # GET /calendars.json
   def index
-    @calendars = Calendar.all
   end
 
   # GET /calendars/1
-  # GET /calendars/1.json
   def show
-    @calendar_events = @calendar.events.flat_map do |e|
-      e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
-    end 
+    @other_calendars = Calendar.where.not(id: @calendar.id)
+    if @calendar.show_all_events?
+      @events = Event.all.flat_map do |event|
+        event.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
+      end
+    else
+      @events = @calendar.events.flat_map do |event|
+        event.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
+      end
+    end
   end
 
   # GET /calendars/new
@@ -26,7 +30,6 @@ class CalendarsController < ApplicationController
   end
 
   # POST /calendars
-  # POST /calendars.json
   def create
     @calendar = Calendar.new(calendar_params)
 
@@ -42,7 +45,6 @@ class CalendarsController < ApplicationController
   end
 
   # PATCH/PUT /calendars/1
-  # PATCH/PUT /calendars/1.json
   def update
     respond_to do |format|
       if @calendar.update(calendar_params)
@@ -56,7 +58,6 @@ class CalendarsController < ApplicationController
   end
 
   # DELETE /calendars/1
-  # DELETE /calendars/1.json
   def destroy
     @calendar.destroy
     respond_to do |format|

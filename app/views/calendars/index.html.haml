@@ -4,7 +4,7 @@
 
 %thead
   %tbody
-    - @calendars.each do |calendar|
+    - Calendar.all.each do |calendar|
       %tr
       %h3
         %td= link_to calendar.name, calendar

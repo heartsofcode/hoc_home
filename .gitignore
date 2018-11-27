@@ -9,7 +9,7 @@
 
 # Ignore bundler config.
 /.bundle
-/vendor/* 
+vendor/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -20,7 +20,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/pulic/uploads/*
+public/*
 
 /node_modules
 /yarn-error.log

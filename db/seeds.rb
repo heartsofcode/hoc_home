@@ -18,9 +18,9 @@ User.create(name: 'n00bie', email: 'hoc@n00bie.hoc', password: 'n00bie')
   Blogpost.create(user_id: 1, title: "Blogpost #{p}", description: "Awesome Post", image_data: img_uploader)
 end
 
-Calendar.create(name: "HEART OF CODE Kalender")
-Calendar.create(name: "Berlin Kalender")
-Calendar.create(name: "Planet Earth Kalender")
+Calendar.create(name: "Heart of Code Events")
+Calendar.create(name: "Other Events")
+Calendar.create(name: "All Events", show_all_events: true)
 
 Event.create(
   name: "Damensalon",
@@ -43,6 +43,26 @@ Event.create(
 )
 
 Event.create(
+  name: "Python",
+  start_time: "2018-06-12 19:30:00",
+  end_time: "2018-06-12 22:30:00",
+  location: "Baumschiff",
+  calendar_id: 1,
+  location_url: "https://twitter.com/heartofcode",
+  description: "Python Study Group",
+  recurring: {
+    interval: 2,
+    until: "null",
+    count: "null",
+    validations: {
+      day: [2]
+      },
+    rule_type: "IceCube::WeeklyRule",
+    week_start: 0
+  }
+)
+
+Event.create(
   name: "Netzpolitischer Abend",
   start_time: "2018-04-03 19:30:00",
   end_time: "2018-04-03 21:30:00",
@@ -50,15 +70,36 @@ Event.create(
   calendar_id: 2,
   location_url: "https://twitter.com/digiges",
   description: "Monatliches Meetup zum Thema digitale Zivilgesellschaft in Berlin.",
+  recurring: {
+    interval: 1,
+    until: "null",
+    count: "null",
+    validations: {
+      day: [2]
+      },
+    rule_type: "IceCube::WeeklyRule",
+    week_start: 0
+  }
+)
+
+Event.create(
+  name: "CCC",
+  start_time: "2018-12-27 00:00:00",
+  end_time: "2018-12-30 23:59:59",
+  location: "Leipzig, Germany",
+  calendar_id: 2,
+  location_url: "https://ccc.org",
+  description: "Chaos Communication Congress, 4 day conference including a big Heart of Code and F.U.C.K. assembly.",
   recurring: { }
 )
+
 
 Event.create(
   name: "IFF",
   start_time: "2019-03-04 00:00:00",
   end_time: "2019-03-08 23:59:59",
   location: "Valencia, Spain",
-  calendar_id: 3,
+  calendar_id: 2,
   location_url: "https://internetfreedomfestival.org",
   description: "5 day conference for people interested in freedom of the internet and cybersecurity on a global level.",
   recurring: { }
