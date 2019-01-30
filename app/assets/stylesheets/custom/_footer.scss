@@ -1,16 +1,14 @@
 .footer {
-   position: fixed;
-   background: white;
-   bottom: 0px;
-   width: 100%;
-   font-family: 'Josefin Sans', sans-serif;
+  margin-top: 5rem;
+  background: white;
+  width: 100%;
 }
 
 .footer .container {
- text-align: center;
+  text-align: center;
 }
 
 .footer .container .footer-wrapper{
- border-top: 1px #CCCCCC solid;
- padding-top: 10px;
+  border-top: 1px #CCCCCC solid;
+  padding-top: 3rem;
 }

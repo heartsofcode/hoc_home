@@ -1,16 +1,11 @@
-%h1
+%h1.spacer-m
   Kalender hier Kalender da
 
 
-%thead
-  %tbody
-    - Calendar.all.each do |calendar|
-      %tr
-      %h3
-        %td= link_to calendar.name, calendar
-        %br
-
-%br
+%ul.spacer-m.calender-list
+  - Calendar.all.each do |calendar|
+    %li
+      = link_to calendar.name, calendar
 
 - if user_signed_in?
   = link_to 'New Calendar', new_calendar_path

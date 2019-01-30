@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "zpoxxz", :name => "flattr:id"}/
+    %meta{charset: "utf-8"}
 
     %title Heart of Code
 
@@ -10,7 +11,7 @@
     %meta{:content => "", :name => "description"}/
     %meta{:content => "Heart of Code", :name => "author"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %link{href: "https://fonts.googleapis.com/css?family=Inconsolata:400,700|Josefin+Sans:400,100,300,600,700|Annie+Use+Your+Telescope|Schoolbell|Sue+Ellen+Francisco|Just+Me+Again+Down+Here|Roboto:100,300,400,500|Roboto+Mono:400,100,300,500,700|Open+Sans+Condensed:300", :rel => "stylesheet", :type => "text/css"}/
+    %link{href: "https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,600,700", :rel => "stylesheet", :type => "text/css"}/
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -21,11 +22,11 @@
     .container.content-main-wrapper
       .content.row.tagline
         .col-lg-12.text-center
-          %a{href: "/", :title => "…the most beautiful and revolutionary ship ever built."}
-            = image_tag "heartofcode42.jpg", id:"logo"
+          %a.logo{href: "/", :title => "…the most beautiful and revolutionary ship ever built."}
+            = image_tag "heartofcode42.jpg", id:"logo", alt: "Heart of Code logo"
       .row.content
         .container
           = yield
 
-  %footer
-    .content.container= render 'layouts/footer'
+    %footer.footer
+      .content.container= render 'layouts/footer'
