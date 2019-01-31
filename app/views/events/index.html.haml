@@ -1,26 +1,27 @@
-%h1
+%h1.spacer-m
   Zückt die Kalender!
 
 #eventlist
 - @hoc_events.each do |event|
-  %h2
-    = link_to event.name, event_path(event.id, time: event.start_time)
-
-  %h4
-    - if event.recurring?
-      = event.rule.to_s
-    ·
-    = event.location
-  - if event.description?
-    = event.description
-  %p
-  - if user_signed_in?
-    %br
-    = link_to 'Edit', edit_event_path(event)
-    \|
-    = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
-  %br
-    *
+  .center-text
+    %h2.spacer-s
+      = link_to event.name, event_path(event.id, time: event.start_time)
+    %p
+      - if event.recurring?
+        = event.rule.to_s
+        ·
+      = event.location
+    %p
+      - if event.description?
+        = event.description
+    %p.spacer-s
+      - if user_signed_in?
+        %br
+        = link_to 'Edit', edit_event_path(event)
+        \|
+        = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+    %p.spacer-m
+      *
 
 - if user_signed_in?
   %p

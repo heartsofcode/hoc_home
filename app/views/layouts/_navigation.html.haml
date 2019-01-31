@@ -1,38 +1,24 @@
-%header.nav.menue.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    %nav.nav.navbar-nav.navbar-centre
-      .navbar-header
-        %button.navbar-toggle{"data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-      / Collection of nav links and other content for toggling
-      #navbarCollapse.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li
-            %a{href: "/about"} about
-          %li
-            %a{href: "/calendars/1"} kalender
-          %li
-            %a{href: "/mitmischen"} mitmischen
-          %li
-            %a{href: "/blogposts"} blog
-          %li
-            %a{href: "/kontakt"} kontakt
-          %li
-            - if notice
-              %p.alert.alert-success= notice
-            - if alert
-              %p.alert.alert-danger= alert
-            - if user_signed_in?
-              Logged in as
-              = succeed "." do
-                %strong= current_user.email
-              = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-              \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
-            - else
-              %li
-                %a{href: "/users/sign_up"} Sign up
-              %li
-                %a{href: "/users/sign_in"} Login
+%header
+  %nav.nav
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only toggle menu
+        %span 🍔
+    / Collection of nav links and other content for toggling
+    #navbarCollapse.collapse.navbar-collapse.navigation
+      %ul.nav.navbar-nav
+        %li
+          %a{href: "/about"} about
+        %li
+          %a{href: "/calendars/1"} kalender
+        %li
+          %a{href: "/mitmischen"} mitmischen
+        %li
+          %a{href: "/blogposts"} blog
+        %li
+          %a{href: "/kontakt"} kontakt
+        %li
+          - if notice
+            %p.alert.alert-success= notice
+          - if alert
+            %p.alert.alert-danger= alert

@@ -1,13 +1,38 @@
-.navbar .nav,
-.navbar .nav > li {
- float:none;
- display:inline-block;
- *display:inline; /* ie7 fix */
- *zoom:1; /* hasLayout ie7 trigger */
- vertical-align: top;
+.navbar-toggle {
+  border: 1px solid #cf0000;
+  transition: all 100ms ease-out;
+  &:hover,
+  &:active {
+    background-color: #cf0000;
+    color: white;
+  }
 }
 
+.navigation {
+  a {
+    font-weight: 400;
+    border-bottom: none;
+    color: #aaa;
+    &:hover,
+    &:active {
+      color: #cf0000;
+      background: none;
+    }
+  }
+  li {
+    text-align: center;
+    > a:hover,
+    > a:active {
+      background: none !important;
+    }
+  }
+}
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-   color: #e60000;
+// f**k overwriting bootstrap
+.navbar-collapse.navigation {
+  @media screen and (min-width: 768px) {
+    display: flex !important;
+    justify-content: center;
+    margin: 1rem 0 2rem;
+  }
 }

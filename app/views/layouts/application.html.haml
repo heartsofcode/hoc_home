@@ -5,6 +5,8 @@
     %meta{:content => "zpoxxz", :name => "flattr:id"}/
     %meta{charset: "utf-8"}
 
+    = render 'application/favicon'
+
     %title Heart of Code
 
     = csrf_meta_tags
@@ -17,7 +19,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    .container= render 'layouts/navigation'
+    = render 'layouts/navigation'
 
     .container.content-main-wrapper
       .content.row.tagline
@@ -29,4 +31,4 @@
           = yield
 
     %footer.footer
-      .content.container= render 'layouts/footer'
+      .container= render 'layouts/footer'

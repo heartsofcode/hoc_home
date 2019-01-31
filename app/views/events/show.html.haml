@@ -29,11 +29,11 @@
     um
   %b
     = prettify(@event)[3]
-%p
+%p.spacer-m
   = @event.description
 %p
-  %b
-  = @event.calendar.name
+  Das Event im Kalender
+  = link_to @event.calendar.name,
 
 - if user_signed_in?
   = link_to 'Edit', edit_event_path

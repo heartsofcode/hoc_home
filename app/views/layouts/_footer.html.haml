@@ -1,9 +1,25 @@
-.col-sm-12.footer-wrapper
+.col-sm-10.footer-wrapper
   %p
     Follow us on Twitter
-    %a{href: "https://twitter.com/heartofcode", :title => "Heart of Code on Twitter"} @heartofcode
-    🐦  |  Contribute on Github to
-    %a{href: "https://github.com/heartsofcode/hoc_home", :title => "Heart of Code code on GitHub"} our Code
-    💻
+    = link_to "@heartofcode 🐦", "https://twitter.com/heartofcode", title: "Heart of Code on Twitter"
+    %br
+    Contribute on Github to
+    = link_to "our Code 💻", "https://github.com/heartsofcode/hoc_home", title: "Heart of Code code on GitHub"
+
   %p
     © 2018 Heart of Code e.V.
+
+.col-sm-2.footer-wrapper
+  - if user_signed_in?
+    %p
+      Logged in as
+      = succeed "." do
+        %strong= current_user.email
+        = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
+        \#{link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'}
+  - else
+    %ul.blank-list
+      %li
+        = link_to "Log in", new_user_session_path
+      %li
+        = link_to "Sign up", new_user_registration_path

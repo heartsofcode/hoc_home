@@ -1,19 +1,33 @@
 body {
-  padding-top: 5px;
+  margin: 0;
   /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.8;
+  font-weight: 300;
 }
 
-.menue {
- background-color: white;
- border-bottom: none;
- text-align: center;
+h2, h3, h4, h5 {
+  font-weight: 300;
 }
 
-.col-lg-12 {
-  padding: 50px 0px 0px;
+p {
+  margin-bottom: 2em;
+  text-align: left;
+}
+
+a {
+  padding: 0 .2em;
+  border-radius: 2px;
+  border-bottom: 1px solid #cf0000;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    background-color: #cf0000;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+  }
 }
 
 iframe {
@@ -22,76 +36,26 @@ iframe {
   display: block;
 }
 
-p > a:hover {
- color: #c8c8c8;
- text-decoration: none;
-}
-
-
-#logo {
- height: 120px;
- margin: 10px;
-}
-
-.logo {
-  border: none !important;
-  background: none !important;
-}
-
-.content {
-  font-weight: 300;
-  font-size: 1.2em;
-  text-align: center;
-
-  p {
-    margin-bottom: 2em;
-    text-align: left;
-  }
-
-
-  a {
-    padding: 0 .2em;
-    text-decoration: none;
-    border-radius: 2px;
-    border-bottom: 1px solid #cf0000;
-    &:hover,
-    &:active {
-      background-color: #cf0000;
-      color: #ffffff;
-      font-weight: 400;
-    }
-  }
-
-}
-
 .content h1{
- font-weight: 350;
- border-top: 1px #CCCCCC solid;
- border-bottom: 1px #CCCCCC solid;
- padding: 12px;
+  text-align: center;
+  font-weight: 350;
+  border-top: 1px #CCCCCC solid;
+  border-bottom: 1px #CCCCCC solid;
+  padding: 12px;
 }
 
-h2, h3, h4, h5 {
- font-weight: 300;
-}
-
-.center-text > p, b {
+.center-text > p, h2 {
   text-align: center;
 }
 
 .justify{
- text-align: justify;
+  text-align: justify;
 }
 
 .imgblock > img {
- display: inline;
- max-height: 150px;
+  display: inline;
+  max-height: 150px;
 }
-
-.content-main-wrapper{
- margin-bottom: 80px;
-}
-
 
 /*images*/
 .workshop-block{
@@ -117,4 +81,10 @@ h2, h3, h4, h5 {
 .calender-list {
   list-style: none;
   font-size: 2.5rem;
+}
+
+.blank-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
