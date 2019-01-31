@@ -1,9 +1,16 @@
 /*kalender*/
 
+.calendar {
+
+}
+
 .calendar-heading {
-  font-size: 2em;
-  padding-bottom: 20px;
-  }
+  font-size: 36px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5rem;
+}
 
 .calendar-navigation {
   font-size: 1em;
@@ -28,4 +35,16 @@
 
 .pagination li > a {
   color: #de1818;
+}
+
+.calendar-navigation,
+.calendar-others {
+  text-align: center;
+}
+
+.calender-list {
+  list-style: none;
+  font-size: 2.5rem;
+  padding: 0;
+  text-align: center;
 }
