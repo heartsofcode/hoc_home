@@ -22,6 +22,11 @@
     = render 'layouts/navigation'
 
     .container.content-main-wrapper
+      - if notice
+        %p.alert.alert-success= notice
+      - if alert
+        %p.alert.alert-danger= alert
+
       .content.row.tagline
         .col-lg-12.text-center
           %a.logo{href: "/", :title => "…the most beautiful and revolutionary ship ever built."}
