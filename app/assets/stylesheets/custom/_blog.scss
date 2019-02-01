@@ -1,11 +1,17 @@
 /*blog*/
 
 .blog {
-
-  h2 a {
-    border: none;
-    color: #cf0000;
-    font-weight: 400;
+  h2 {
+    text-align: left;
+    a {
+      border: none;
+      color: #cf0000;
+      font-weight: 400;
+      &:hover,
+      &:active {
+        color: white;
+      }
+    }
   }
   p {
     padding: 0 .9rem;
