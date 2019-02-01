@@ -5,6 +5,13 @@ body {
   font-size: 20px;
   line-height: 1.8;
   font-weight: 300;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  overflow-x: hidden;
+  main {
+    flex-grow: 1;
+  }
 }
 
 h2, h3, h4, h5 {
@@ -14,6 +21,9 @@ h2, h3, h4, h5 {
 p {
   margin-bottom: 2em;
   text-align: left;
+}
+b, strong {
+  font-weight: 500;
 }
 
 a {
@@ -28,6 +38,12 @@ a {
     font-weight: 400;
     text-decoration: none;
   }
+}
+
+button {
+  border: none;
+  border-radius: 2px;
+  font-weight: 400;
 }
 
 iframe {
@@ -82,4 +98,12 @@ iframe {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  span {
+    display: inline-block;
+  }
 }

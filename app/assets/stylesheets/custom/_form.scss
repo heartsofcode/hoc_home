@@ -1,6 +1,25 @@
 form {
   max-width: 450px;
   margin: auto;
+
+
+  input[type=submit],
+  button {
+    //  max-width: 150px;
+    margin: auto;
+    border: 1px #cf0000 solid;
+    background-color: white;
+    &:hover,
+    &:active {
+      background-color: #cf0000;
+      color: white;
+    }
+  }
+
+}
+
+label {
+  font-weight: 400;
 }
 
 input,
@@ -13,19 +32,4 @@ textarea {
   font-size: 20px;
   border: 1px solid #aaa;
   border-radius: 2px;
-}
-
-input[type=submit],
-button {
-  max-width: 150px;
-  margin: auto;
-  border: 1px #cf0000 solid;
-  border-radius: 2px;
-  background-color: white;
-  &:hover,
-  &:active {
-    background-color: #cf0000;
-    font-weight: 400;
-    color: white;
-  }
 }

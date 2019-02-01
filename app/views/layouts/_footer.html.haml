@@ -1,25 +1,35 @@
-.col-sm-10.footer-wrapper
-  %p
-    Follow us on Twitter
-    = link_to "@heartofcode 🐦", "https://twitter.com/heartofcode", title: "Heart of Code on Twitter"
-    %br
-    Contribute on Github to
-    = link_to "our Code 💻", "https://github.com/heartsofcode/hoc_home", title: "Heart of Code code on GitHub"
+.container.footer-wrapper
+  .row.spacer-s
+    .col-sm-7
+      %h3 Anderswo
+      %ul.blank-list
+        %li= link_to "Twitter @heartofcode", "https://twitter.com/heartofcode", title: "Heart of Code on Twitter"
+        %li= link_to "GitHub heartsofcode", "https://github.com/heartsofcode/hoc_home", title: "Heart of Code code on GitHub"
 
-  %p
-    © 2018 Heart of Code e.V.
+    .col-sm-3
+      %h3 Vereinskrams
+      %ul.blank-list
+        %li= link_to "Satzung", satzung_path()
+        %li= link_to "Mitglitzerformular", mitgliedsformular_path()
 
-.col-sm-2.footer-wrapper
-  - if user_signed_in?
-    %p
-      Logged in as
-      = succeed "." do
-        %strong= current_user.email
-        = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
-        \#{link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'}
-  - else
-    %ul.blank-list
-      %li
-        = link_to "Log in", new_user_session_path
-      %li
-        = link_to "Sign up", new_user_registration_path
+    .col-sm-2
+      %h3 Mitglitzer
+      - if user_signed_in?
+        %p
+          Logged in as
+          = succeed "." do
+            %strong= current_user.email
+            = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
+            \#{link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'}
+      - else
+        %ul.blank-list
+          %li
+            = link_to "Log in", new_user_session_path
+          %li
+            = link_to "Sign up", new_user_registration_path
+
+  .row
+    %p.col-sm-12
+      ©
+      = Time.now.year
+      Heart of Code e.V.

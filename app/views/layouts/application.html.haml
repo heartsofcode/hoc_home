@@ -21,11 +21,21 @@
   %body
     = render 'layouts/navigation'
 
-    .container.content-main-wrapper
-      - if notice
-        %p.alert.alert-success= notice
-      - if alert
-        %p.alert.alert-danger= alert
+    %main.content-main-wrapper
+      - if notice || alert
+        .container
+          - if notice
+            %div.alert.alert-success
+              %p= notice
+              %button.close-flash
+                .sr-only close alert
+                X
+          - if alert
+            %div.alert.alert-danger
+              %p= alert
+              %button.close-flash
+                .sr-only close alert
+                X
 
       .content.row.tagline
         .col-lg-12.text-center
@@ -36,4 +46,4 @@
           = yield
 
     %footer.footer
-      .container= render 'layouts/footer'
+      = render 'layouts/footer'
