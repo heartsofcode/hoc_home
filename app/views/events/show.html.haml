@@ -16,7 +16,7 @@
     %b
       = prettify(@event)[0]
   um
-  %b
+  %strong
     = prettify(@event)[1]
 
   - if prettify(@event)[0] == prettify(@event)[2]
@@ -24,16 +24,16 @@
 
   - else
     bis
-    %b
+    %strong
       = prettify(@event)[2]
     um
-  %b
+  %strong
     = prettify(@event)[3]
-%p
+%p.spacer-m
   = @event.description
 %p
-  %b
-  = @event.calendar.name
+  Im Kalender
+  = link_to "#{@event.calendar.name}", calendar_path(@event.calendar)
 
 - if user_signed_in?
   = link_to 'Edit', edit_event_path

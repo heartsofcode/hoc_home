@@ -1,19 +1,23 @@
 %p#notice= notice
 
-%h1
-  = @blogpost.title
-%p
-  = image_tag @blogpost.image_url(:medium)
-%p
-  = show_date(@blogpost)
-  von
-  = @blogpost.get_display_name
-%p
-  ***
-%p
-  = @blogpost.description
+.blog
+  %h1.spacer-m
+    = @blogpost.title
+  %p
+    = show_date(@blogpost)
+    von
+    = @blogpost.get_display_name
+  %p
+    = image_tag @blogpost.image_url(:medium)
 
-- if user_signed_in?
-  = link_to 'Edit', edit_blogpost_path(@blogpost)
-  \|
-= link_to 'Back', blogposts_path
+  %p
+    = @blogpost.description
+
+
+  .center-text
+    %p
+      ***
+  - if user_signed_in?
+    = link_to 'Edit', edit_blogpost_path(@blogpost)
+    \|
+  = link_to 'Back', blogposts_path

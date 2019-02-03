@@ -1,16 +1,49 @@
-body { padding-top: 5px;
-   /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+body {
+  margin: 0;
+  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 300;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  overflow-x: hidden;
+  main {
+    flex-grow: 1;
+  }
 }
 
-.menue {
- background-color: white;
- font-family: 'Josefin Sans', sans-serif;
- border-bottom: none;
- text-align: center;
+h2, h3, h4, h5 {
+  font-weight: 300;
 }
 
-.col-lg-12 {
-  padding: 50px 0px 0px;
+p {
+  margin-bottom: 2em;
+  text-align: left;
+}
+b, strong {
+  font-weight: 500;
+}
+
+a {
+  padding: 0 .2em;
+  border-radius: 2px;
+  border-bottom: 1px solid #cf0000;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    background-color: #cf0000;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+button {
+  border: none;
+  border-radius: 2px;
+  font-weight: 400;
 }
 
 iframe {
@@ -19,59 +52,26 @@ iframe {
   display: block;
 }
 
-p > a,
-h3 > a {
-  box-shadow: 0 -2px 0 #c8c8c8 inset;
-  color: inherit;
-}
-
-p > a:hover {
- color: #c8c8c8;
- text-decoration: none;
-}
-
-
-#logo {
- height: 120px;
- margin: 10px;
-}
-
 .content h1{
- font-weight: 350;
- border-top: 1px #CCCCCC solid;
- border-bottom: 1px #CCCCCC solid;
- padding: 12px;
+  text-align: center;
+  font-weight: 350;
+  border-top: 1px #CCCCCC solid;
+  border-bottom: 1px #CCCCCC solid;
+  padding: 12px;
 }
 
-h2, h3, h4, h5 {
- font-family: 'Josefin Sans' , sans-serif;
- font-weight: 300;
-}
-
-.center-text > p, b, h2 {
+.center-text > p, h2 {
   text-align: center;
 }
 
 .justify{
- text-align: justify;
+  text-align: justify;
 }
 
 .imgblock > img {
- display: inline;
- max-height: 150px;
+  display: inline;
+  max-height: 150px;
 }
-
-.content-main-wrapper{
- margin-bottom: 80px;
-}
-
-.content {
- font-family: 'Josefin Sans' , sans-serif;
- font-weight: 300;
- font-size: 1.2em;
- text-align: center;
-}
-
 
 /*images*/
 .workshop-block{
@@ -84,4 +84,26 @@ h2, h3, h4, h5 {
   width: 50%;
   margin-top: 10px;
   margin-bottom: 50px;
+}
+
+.spacer-s {
+  margin-bottom: 5rem;
+}
+
+.spacer-m {
+  margin-bottom: 10rem;
+}
+
+.blank-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  span {
+    display: inline-block;
+  }
 }

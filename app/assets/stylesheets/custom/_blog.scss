@@ -1,1 +1,30 @@
 /*blog*/
+
+.blog {
+  h2 {
+    text-align: left;
+    a {
+      border: none;
+      color: #cf0000;
+      font-weight: 400;
+      &:hover,
+      &:active {
+        color: white;
+      }
+    }
+  }
+  p {
+    padding: 0 .9rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.blog-list {
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}

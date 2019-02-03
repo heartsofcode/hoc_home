@@ -1,19 +1,17 @@
-%p
+%h1.spacer-m
+  Bloggen und Posten
+
 .row
   .col-md-10.col-md-offset-1.blog
-    %thead
-      %tbody
-        - @blogposts.each do |blogpost|
-          %tr
-            %h1
-              %td= link_to blogpost.title, blogpost
-            %td= image_tag blogpost.image_url(:small)
-            %p
-            %td
-              = show_date(blogpost)
-              von
-              = blogpost.get_display_name
-            %br
-            ***
-            %br
-            %td= blogpost.description
+    %ul.blog-list
+      - @blogposts.each do |blogpost|
+        %li
+          %h2= link_to blogpost.title, blogpost
+          %p
+            = show_date(blogpost)
+            von
+            = blogpost.get_display_name
+          = image_tag blogpost.image_url(:small)
+          %p= blogpost.description
+          .center-text
+            %p ***
