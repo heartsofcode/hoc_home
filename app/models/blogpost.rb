@@ -3,7 +3,7 @@ class Blogpost < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   validates_presence_of :title, :slug
-  validates :image, presence: true
+  #validates :image, presence: true
 
   belongs_to :user
 
