@@ -12,6 +12,12 @@
   margin-bottom: 5rem;
 }
 
+@media (max-width: 768px) {
+  .calendar-heading {
+    font-size: 26px;
+    margin-bottom: 1rem;
+  }
+}
 .calendar-navigation {
   font-size: 1em;
   font-weight: bold;
