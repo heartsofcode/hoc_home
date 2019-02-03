@@ -8,7 +8,7 @@
     von
     = @blogpost.get_display_name
   %p
-    = image_tag @blogpost.image_url(:medium)
+    = image_tag @blogpost.image_url(:medium) if @blogpost.image_url
 
   %p
     = @blogpost.description

@@ -11,7 +11,7 @@
             = show_date(blogpost)
             von
             = blogpost.get_display_name
-          = image_tag blogpost.image_url(:small)
+          = image_tag blogpost.image_url(:small) if blogpost.image_url
           %p= blogpost.description
           .center-text
             %p ***
