@@ -9,6 +9,7 @@ body {
   flex-flow: column;
   height: 100vh;
   overflow-x: hidden;
+  padding: 0 1em;
   main {
     flex-grow: 1;
   }
@@ -16,6 +17,12 @@ body {
 
 h2, h3, h4, h5 {
   font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  h1, .h1 {
+    font-size: 26px;
+  }
 }
 
 p {
