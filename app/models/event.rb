@@ -6,11 +6,8 @@ class Event < ApplicationRecord
   has_many :event_exceptions
 
   def recurring=(value)
-    if RecurringSelect.is_valid_rule?(value)
-      super(RecurringSelect.dirty_hash_to_rule(value).to_hash)
-    else
-      super(nil)
-    end
+    return super(nil) unless real_valid_rule?(value)
+    super(RecurringSelect.dirty_hash_to_rule(value).to_hash)
   end
 
   def rule
@@ -34,4 +31,11 @@ class Event < ApplicationRecord
     end
   end
 
+  private
+
+  def real_valid_rule?(value)
+    return false unless RecurringSelect.is_valid_rule?(value)
+    return false if  value == "null"
+    true
+  end
 end
