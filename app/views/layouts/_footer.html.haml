@@ -11,6 +11,8 @@
       %ul.blank-list
         %li= link_to "Satzung", satzung_path()
         %li= link_to "Mitglitzerformular", mitgliedsformular_path()
+        - if user_signed_in?
+          = link_to "✨ Neuer Blogpost", new_blogpost_path
 
     .col-sm-2
       %h3 Mitglitzer
