@@ -288,16 +288,16 @@ DEPENDENCIES
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
   devise
-  fastimage
+  fastimage (= 2.1.4)
   friendly_id
   haml-rails
   html2haml
-  image_processing
+  image_processing (= 1.7.1)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   md_emoji
-  mini_magick
+  mini_magick (= 4.9.2)
   mysql2 (~> 0.5.2)
   pg
   puma (~> 3.7)
@@ -309,7 +309,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
-  shrine
+  shrine (= 2.13.0)
   simple_calendar (~> 2.0)
   sqlite3
   turbolinks (~> 5)

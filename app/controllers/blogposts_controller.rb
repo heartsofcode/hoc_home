@@ -23,7 +23,7 @@ class BlogpostsController < ApplicationController
   end
 
   # POST /blogposts
-  # POST /blogposts.json
+  # POST /blogposts.jsonx
   def create
     @blogpost = Blogpost.new(blogpost_params)
     @blogpost.user = current_user

@@ -42,13 +42,13 @@ gem "simple_calendar", "~> 2.0"
 gem "recurring_select", github: "RundownApp/recurring_select"
 
 # To extract the image dimensions
-gem 'fastimage'
+gem 'fastimage', '2.1.4'
 # Required for image versioning and includes helpers for ImageMagick
-gem 'image_processing'
+gem 'image_processing', '1.7.1'
 # Required for image versioning
-gem 'mini_magick'
-# Shrine :)
-gem 'shrine'
+gem 'mini_magick', '4.9.2'
+# Shrine :) for io objects
+gem 'shrine', '2.13.0'
 
 gem 'rb-readline', '0.5.3'
 

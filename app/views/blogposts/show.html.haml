@@ -1,18 +1,16 @@
 %p#notice= notice
 
-.blog
+%article.blog
   %h1.spacer-m
     = @blogpost.title
   %p
     = show_date(@blogpost)
     von
     = @blogpost.get_display_name
-  %p
-    = image_tag @blogpost.image_url(:medium) if @blogpost.image_url
+    = image_tag @blogpost.image_url(:medium), class: "blog__image" if @blogpost.image.present?
 
   %p
     = markdown @blogpost.description
-
 
   .center-text
     %p
