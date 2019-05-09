@@ -5,7 +5,7 @@ class BlogpostsController < ApplicationController
   # GET /blogposts
   # GET /blogposts.json
   def index
-    @blogposts = Blogpost.all
+    @blogposts = Blogpost.all.reverse
   end
 
   # GET /blogposts/slugged_url
@@ -23,7 +23,7 @@ class BlogpostsController < ApplicationController
   end
 
   # POST /blogposts
-  # POST /blogposts.json
+  # POST /blogposts.jsonx
   def create
     @blogpost = Blogpost.new(blogpost_params)
     @blogpost.user = current_user
