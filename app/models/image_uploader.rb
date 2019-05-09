@@ -1,3 +1,4 @@
+# coding: utf-8
 # Shrine provides us with different plugins for different functions.
 # Here are the plugins included in our uploader and their functions:
 #
@@ -13,14 +14,13 @@
 #   To generate versions, you simply return a hash of versions like we did in our uploader.
 
 class ImageUploader < Shrine
-  include ImageProcessing::MiniMagick
-
   plugin :activerecord
   plugin :determine_mime_type
   plugin :logging, logger: Rails.logger
   plugin :remove_attachment
   plugin :store_dimensions
   plugin :validation_helpers
+  plugin :processing
   plugin :versions, names: [:original, :thumb]
 
   Attacher.validate do
@@ -30,10 +30,15 @@ class ImageUploader < Shrine
 
   def process(io, context)
     return unless context[:phase] == :store
-    size_700 = resize_to_limit!(io.download, 700, 700)
-    size_500 = resize_to_limit(size_700, 500, 500)
-    size_300 = resize_to_limit(size_500, 300, 300)
-    thumb = resize_to_limit(size_300, 200, 200)
+    original = io.download
+    pipeline = ImageProcessing::MiniMagick.source(original)
+
+    size_700 = pipeline.resize_to_limit!(700, 700)
+    size_500 = pipeline.resize_to_limit!(500, 500)
+    size_300 = pipeline.resize_to_limit!(300, 300)
+    thumb = pipeline.resize_to_limit!(200, 200)
+
+    original.close!
 
     { original: io, large: size_700, medium: size_500, small: size_300, thumb: thumb }
   end
