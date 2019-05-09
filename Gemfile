@@ -13,7 +13,7 @@ gem 'rails', '~> 5.1.0'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '>= 3.4.1'
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'html2haml'
 gem 'haml-rails'
 gem 'friendly_id'
-gem 'devise'
+gem 'devise', ">= 4.6.0"
 gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
@@ -81,4 +81,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 4.1.2'
+gem 'bootstrap', '>= 4.3.1'
