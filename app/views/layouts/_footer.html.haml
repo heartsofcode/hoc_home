@@ -11,19 +11,11 @@
       %ul.blank-list
         %li= link_to "Satzung", satzung_path()
         %li= link_to "Mitglitzerformular", mitgliedsformular_path()
-        - if user_signed_in?
-          %li= link_to "✨ Neuer Blogpost", new_blogpost_path
-          %li= link_to "✨ Neues Event", new_event_path
 
     .col-sm-2
       %h3 Mitglitzer
-      - if user_signed_in?
-        %p
-          Logged in as
-          = succeed "." do
-            %strong= current_user.email
-            = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
-            \#{link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'}
+      - if  user_signed_in?
+        = link_to "Log out", destroy_user_session_path, method: :delete
       - else
         %ul.blank-list
           %li

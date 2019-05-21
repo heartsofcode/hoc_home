@@ -1,0 +1,29 @@
+.glitter-nav {
+  display: flex;
+  align-items: center;
+  padding: .5em;
+  background-color: #ccc;
+
+  a {
+    border: none !important;
+  }
+
+  .dropdown-menu a {
+    display: block;
+  }
+
+  .dropdown-toggle {
+    margin-right: 1em;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  ul {
+    //display: flex;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+}
