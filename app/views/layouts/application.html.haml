@@ -13,7 +13,7 @@
     %meta{:content => "", :name => "description"}/
     %meta{:content => "Heart of Code", :name => "author"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %link{href: "https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,600,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{href: "https://fonts.googleapis.com/css?family=Josefin+Sans:400,600", :rel => "stylesheet", :type => "text/css"}/
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -37,10 +37,6 @@
                 .sr-only close alert
                 X
 
-      .content.row.tagline
-        .col-lg-12.text-center
-          %a.logo{href: "/", :title => "…the most beautiful and revolutionary ship ever built."}
-            = image_tag "heartofcode42.jpg", id:"logo", alt: "Heart of Code logo"
       .row.content
         .container
           = yield

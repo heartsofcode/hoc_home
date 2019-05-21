@@ -1,3 +1,11 @@
+.navigation {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
 .navbar-toggle {
   border: 1px solid #cf0000;
   transition: all 100ms ease-out;
@@ -10,9 +18,8 @@
 
 .navigation {
   a {
-    font-weight: 400;
+    //font-weight: 400;
     border-bottom: none;
-    color: #aaa;
     &:hover,
     &:active {
       color: #cf0000;
@@ -20,6 +27,7 @@
     }
   }
   li {
+    margin: 0 .7em;
     text-align: center;
     > a:hover,
     > a:active {

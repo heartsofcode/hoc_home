@@ -5,14 +5,16 @@
         %span.sr-only toggle menu
         %span 🍔
     / Collection of nav links and other content for toggling
-    #navbarCollapse.collapse.navbar-collapse.navigation
-      %ul.nav.navbar-nav
+    #navbarCollapse.collapse.navbar-collapse
+      %ul.navigation
         %li
           %a{href: "/about"} about
         %li
           %a{href: "/calendars/1"} kalender
+
         %li
-          %a{href: "/mitmischen"} mitmischen
+          %a.logo{href: "/", :title => "Heart of Code Startseite"}
+            = image_tag "heartofcode42.jpg", id:"logo", alt: "Heart of Code Logo"
         %li
           %a{href: "/blogposts"} blog
         %li
