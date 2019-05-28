@@ -1,0 +1,23 @@
+%nav.glitter-nav
+  .dropdown
+    .nav-item.dropdown-toggle{id: "dropdownUser",
+                         data: {toggle: "dropdown"},
+                         aria: {haspopup: "true",
+                         expanded: "false"}}
+      👩‍🚀 Ahoy,
+      =current_user.email
+    .dropdown-menu{aria:{labelledby: "dropdownUser"}}
+      = link_to '🔩 Edit profile', edit_user_registration_path, class: 'dropdown-item'
+      = link_to "🍃 Log out", destroy_user_session_path, method: :delete, class: 'dropdown-item'
+
+  .dropdown
+    .nav-item.dropdown-toggle{id: "dropdownNew",
+                              data: {toggle: "dropdown"},
+                              aria: {haspopup: "true",
+                              expanded: "false"}}
+      ✨ Neue
+    .dropdown-menu{aria: {labelledby: "dropdownNew"}}
+      %ul
+        %li= link_to "✨ Neuer Blogpost", new_blogpost_path
+        %li= link_to "✨ Neuer Kalender", new_calendar_path
+        %li= link_to "✨ Neues Event", new_event_path

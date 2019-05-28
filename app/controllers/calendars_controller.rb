@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_calendar, except: [:index]
+  before_action :set_calendar, except: [:index, :new]
 
   # GET /calendars
   def index

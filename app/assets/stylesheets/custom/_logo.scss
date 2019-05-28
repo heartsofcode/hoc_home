@@ -1,16 +1,14 @@
-#logo {
-  height: 120px;
-  margin: 2em;
-}
-
-@media (max-width: 768px) {
-  #logo {
-    height: 90px;
-    margin: 0.5em;
-  }
-}
-
 .logo {
   border: none !important;
   background: none !important;
+  img {
+    width: 90px;
+    height: 90px;
+    margin-top: .5em;
+    transition: transform 200ms ease;
+  }
+  &:hover img,
+  &:active img {
+    transform: scale(1.1);
+  }
 }
