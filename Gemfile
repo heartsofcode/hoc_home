@@ -46,7 +46,7 @@ gem 'image_processing', '~> 1.7.1'
 # Required for image versioning
 gem 'mini_magick', '~> 4.9.2'
 # Shrine :) for io objects
-gem 'shrine', '~> 2.13.0'
+gem 'shrine', '~> 3.3.0'
 
 gem 'rb-readline', '0.5.3'
 
