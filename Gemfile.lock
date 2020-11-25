@@ -159,7 +159,6 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.2)
     mustermann (1.0.3)
-    mysql2 (0.5.2)
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
@@ -340,7 +339,6 @@ DEPENDENCIES
   mailcatcher (~> 0.2.4)
   md_emoji
   mini_magick (~> 4.9.2)
-  mysql2 (~> 0.5.2)
   pg
   puma (>= 3.12.6)
   rails (~> 5.2.3)
