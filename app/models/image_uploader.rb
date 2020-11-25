@@ -5,41 +5,29 @@
 # :activerecord: This extends the “attachment” interface with support for ActiveRecord.
 #   Whenever an “attachment” module is included, additional callbacks are added to the model.
 # :determine_mime_type: This stores the actual MIME type of the uploaded file.
-# :logging: The logging plugin logs any storing/processing/deleting that is performed.
-#   By passing in Rails.logger to the :logger option, we change the logger to be useful in our Rails application.
 # :remove_attachment: The remove_attachment plugin allows you to delete attachments through checkboxes on the web form.
 # :store_dimensions: This plugin extracts and stores dimensions of the uploaded image.
 # :validation_helpers: This provides helper methods for validating attached files.
-# :versions: The versions plugin enables your uploader to deal with versions of an image.
-#   To generate versions, you simply return a hash of versions like we did in our uploader.
 
 class ImageUploader < Shrine
+  # Shrine::Attachment
   plugin :activerecord
   plugin :determine_mime_type
-  plugin :logging, logger: Rails.logger
   plugin :remove_attachment
   plugin :store_dimensions
   plugin :validation_helpers
-  plugin :processing
-  plugin :versions, names: [:original, :thumb]
+  plugin :derivatives
 
   Attacher.validate do
     validate_max_size 2.megabytes, message: 'is too large (max is 2 MB)'
-    validate_mime_type_inclusion ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+    validate_mime_type %w[image/jpeg image/jpg image/png image/gif]
   end
 
-  def process(io, context)
-    return unless context[:phase] == :store
-    original = io.download
-    pipeline = ImageProcessing::MiniMagick.source(original)
+  # Attacher.derivatives_processor do |original|
+  #   magick = ImageProcessing::MiniMagick.source(original)
 
-    size_700 = pipeline.resize_to_limit!(700, 700)
-    size_500 = pipeline.resize_to_limit!(500, 500)
-    size_300 = pipeline.resize_to_limit!(300, 300)
-    thumb = pipeline.resize_to_limit!(200, 200)
-
-    original.close!
-
-    { original: io, large: size_700, medium: size_500, small: size_300, thumb: thumb }
-  end
+  #   { large:  magick.resize_to_limit!(700, 700),
+  #     medium: magick.resize_to_limit!(500, 500),
+  #     small:  magick.resize_to_limit!(300, 300), }
+  # end
 end
