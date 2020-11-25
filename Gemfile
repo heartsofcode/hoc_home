@@ -42,7 +42,7 @@ gem "recurring_select", "~> 2.1"
 # To extract the image dimensions
 gem 'fastimage', '~> 2.1.4'
 # Required for image versioning and includes helpers for ImageMagick
-gem 'image_processing', '~> 1.7.1'
+gem 'image_processing', '~> 1.8'
 # Required for image versioning
 gem 'mini_magick', '~> 4.9.2'
 # Shrine :) for io objects

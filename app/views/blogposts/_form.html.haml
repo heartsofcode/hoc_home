@@ -24,7 +24,7 @@
     = f.file_field :image
   - if @blogpost.image_data?
     .field
-      = image_tag @blogpost.image_url
+      = image_tag @blogpost.image_url(:small)
     .field
       Remove attachment: #{f.check_box :remove_image}
 
