@@ -8,7 +8,7 @@ ruby '2.6.3'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem "puma", ">= 3.12.6"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.4.1'
@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'html2haml'
 gem 'haml-rails'
 gem 'friendly_id'
-gem 'devise', ">= 4.6.0"
+gem "devise", ">= 4.7.1"
 gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
@@ -46,7 +46,7 @@ gem 'image_processing', '~> 1.7.1'
 # Required for image versioning
 gem 'mini_magick', '~> 4.9.2'
 # Shrine :) for io objects
-gem 'shrine', '~> 2.13.0'
+gem "shrine", ">= 3.3.0"
 
 gem 'rb-readline', '0.5.3'
 
