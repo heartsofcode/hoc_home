@@ -6,6 +6,3 @@
   - Calendar.all.each do |calendar|
     %li
       = link_to calendar.name, calendar
-
-- if user_signed_in?
-  = link_to 'New Calendar', new_calendar_path
