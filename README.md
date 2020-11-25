@@ -44,3 +44,21 @@ $ rails server
 
 For more information on Rails, see the cool tutorial here:
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+
+## Deployment
+
+We're using Heroku for the live site, download their cli tool for easy interaction with the production evironment. (You also need access to it, too.)
+
+Assuming `heroku` is the name of your heroku remote, push to it with
+
+`$ git push heroku mistress:master`
+
+Look at the logs
+
+`$ heroku logs --tail`
+
+Use the console
+
+`$ heroku run rails c`
+
+That's it!
