@@ -4,7 +4,7 @@
                          data: {toggle: "dropdown"},
                          aria: {haspopup: "true",
                          expanded: "false"}}
-      👩‍🚀 Ahoy,
+      👩‍🚀 Ahoi,
       =current_user.email
     .dropdown-menu{aria:{labelledby: "dropdownUser"}}
       = link_to '🔩 Edit profile', edit_user_registration_path, class: 'dropdown-item'
@@ -15,9 +15,8 @@
                               data: {toggle: "dropdown"},
                               aria: {haspopup: "true",
                               expanded: "false"}}
-      ✨ Neue
+      ✨ Neu
     .dropdown-menu{aria: {labelledby: "dropdownNew"}}
       %ul
         %li= link_to "✨ Neuer Blogpost", new_blogpost_path
-        %li= link_to "✨ Neuer Kalender", new_calendar_path
         %li= link_to "✨ Neues Event", new_event_path

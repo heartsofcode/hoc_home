@@ -8,9 +8,5 @@
       = link_to event.name, event_path(event)
       %br
 
-- if user_signed_in?
-  = link_to 'Edit', edit_calendar_path(@calendar)
-  \|
-
 .center-text
   %p= link_to 'All calendars', calendars_path
