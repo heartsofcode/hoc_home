@@ -73,7 +73,6 @@ end
 
 group :production do
   gem 'unicorn', '~> 5.4.1'
-  #gem 'mysaql2', '~> 0.5.2'
   gem 'pg'
 end
 
