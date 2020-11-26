@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
-gem "puma", ">= 3.12.6"
+gem 'puma', '>= 3.12.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.4.1'
@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'html2haml'
 gem 'haml-rails'
 gem 'friendly_id'
-gem "devise", ">= 4.7.1"
+gem 'devise', '>= 4.7.1'
 gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
@@ -36,8 +36,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "simple_calendar", "~> 2.0"
-gem "recurring_select", "~> 2.1"
+gem 'simple_calendar', '~> 2.0'
+gem 'recurring_select', '~> 2.1'
 
 # To extract the image dimensions
 gem 'fastimage', '~> 2.1.4'
@@ -46,7 +46,7 @@ gem 'image_processing', '~> 1.8'
 # Required for image versioning
 gem 'mini_magick', '~> 4.9.2'
 # Shrine :) for io objects
-gem "shrine", ">= 3.3.0"
+gem 'shrine', '>= 3.3.0'
 
 gem 'rb-readline', '0.5.3'
 
