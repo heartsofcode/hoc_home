@@ -8,10 +8,10 @@
 
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, placeholder: "Was zum Interessieren"
   .field
     = f.label :description
-    = f.text_field :description
+    = f.text_area :description, placeholder: "Was zum Mund wässrig machen"
   .field
     = f.label :start_time
     = f.datetime_select :start_time
@@ -23,10 +23,10 @@
     = f.select_recurring :recurring
   .field
     = f.label :location
-    = f.text_field :location
+    = f.text_field :location, placeholder: "Adresse oder virtuell oder bei dir in der Küche?"
   .field
     = f.label :location_url
-    = f.text_field :location_url
+    = f.text_field :location_url, placeholder: "Please ne URL hier"
   .field
     = f.collection_select(:calendar_id, Calendar.where.not(name: "Alle Events"), :id, :name, prompt: "Select a Calendar")
   .actions
