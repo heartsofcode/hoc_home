@@ -9,13 +9,13 @@
 
   .field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, placeholder: "Ein Titel, der Beine macht"
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_area :description, placeholder: "Lass hier die Knorken knallen."
   .field
     = f.label :display_name
-    = f.text_field :display_name
+    = f.text_field :display_name, placeholder: "Wenn leer, dann username (da staunste?)"
   .field
     = f.label :published_at
     = f.datetime_select :published_at
@@ -24,7 +24,7 @@
     = f.file_field :image
   - if @blogpost.image_data?
     .field
-      = image_tag @blogpost.image_url
+      = image_tag @blogpost.image_url(:small)
     .field
       Remove attachment: #{f.check_box :remove_image}
 

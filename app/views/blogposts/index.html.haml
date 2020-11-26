@@ -6,12 +6,12 @@
     %ul.blog-list
       - @blogposts.each do |blogpost|
         %li
-          %h2= link_to blogpost.title, blogpost
+          %h2
+            = link_to blogpost.title, blogpost
           %p
             = show_date(blogpost)
             von
             = blogpost.get_display_name
-          = image_tag blogpost.image_url, class: "blog__image" if blogpost.image.present?
+          = image_tag blogpost.image_url(:medium), class: "blog__image" if blogpost.image.present?
           %p= markdown blogpost.description
-          .center-text
-            %p ***
+          %p ***

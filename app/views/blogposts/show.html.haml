@@ -3,16 +3,17 @@
 %article.blog
   %h1.spacer-m
     = @blogpost.title
-  %p
-    = show_date(@blogpost)
-    von
-    = @blogpost.get_display_name
-    = image_tag @blogpost.image_url, class: "blog__image" if @blogpost.image.present?
-
-  %p
-    = markdown @blogpost.description
-
   .center-text
+    %p
+      = show_date(@blogpost)
+      von
+      = @blogpost.get_display_name
+      %br
+      = image_tag @blogpost.image_url(:medium), class: "blog__image" if @blogpost.image.present?
+
+    %p
+      = markdown @blogpost.description
+
     %p
       ***
   - if user_signed_in?
