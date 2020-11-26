@@ -19,4 +19,6 @@
   - if user_signed_in?
     = link_to 'Edit', edit_blogpost_path(@blogpost)
     \|
+    = link_to 'Destroy', @blogpost, method: :delete, data: { confirm: 'Are you sure?' }
+    \|
   = link_to 'Back', blogposts_path
