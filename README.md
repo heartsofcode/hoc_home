@@ -5,7 +5,7 @@ normale Seite mit Infos zum Hackspace &
 einen Log-In-Bereich für Mitmuschis
 
 # Tech
-- Rails app: Rails v5.1, Ruby v2.4.2
+- Rails app: Rails v5.2, Ruby v2.6.6
 
 ## Our default branch is called `Mistress`. You are welcome <3!
 
