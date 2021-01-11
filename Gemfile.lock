@@ -213,7 +213,7 @@ GEM
       jquery-rails (>= 3.0)
       rails (>= 3.2)
       sass-rails (>= 4.0)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
