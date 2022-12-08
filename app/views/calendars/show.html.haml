@@ -1,12 +1,24 @@
-%p#notice= notice
-
 .calendar.spacer-m
-  = month_calendar events: @events do |date, events|
-    = date.day
-    %br
-    - events.each do |event|
-      = link_to event.name, event_path(event)
+  .big
+    = month_calendar events: @events do |date, events|
+      = date.day
       %br
+      - events.each do |event|
+        = link_to event.name, event_path(event)
+  .smol
+    .simple-calendar
+      .calendar-heading
+        %span.calendar-title
+          = @calendar.name
+      - @events.each do |event|
+        = link_to event.name, event_path(event)
+        %br
+        .fine
+          = prettify(event)[0] 
+          @
+          = prettify(event)[1]
+        = event.description
+        %br *
 
 .center-text
   %p= link_to 'All calendars', calendars_path

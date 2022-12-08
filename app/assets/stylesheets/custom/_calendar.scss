@@ -1,9 +1,5 @@
 /*kalender*/
 
-.calendar {
-
-}
-
 .calendar-heading {
   font-size: 36px;
   text-align: center;
@@ -21,6 +17,7 @@
 .calendar-navigation {
   font-size: 1em;
   font-weight: bold;
+  text-align: center;
 }
 
 .a {
@@ -37,3 +34,28 @@
   padding: 0;
   text-align: center;
 }
+
+// when screen is big
+@media screen and (min-width:901px), screen and (min-height:501px) {
+  .big {
+    display: block; 
+  }
+  .smol {
+    display: none; 
+  }
+}
+
+// when screen is smol
+@media screen and (max-width:900px), screen and (max-height:500px) {
+  .smol {
+    display: block;
+    text-align: center;
+  }
+  .fine {
+    color: grey;
+  }
+  .big {
+    display: none;
+  }
+}
+
