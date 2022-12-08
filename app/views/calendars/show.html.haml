@@ -10,7 +10,7 @@
       .calendar-heading
         %span.calendar-title
           = @calendar.name
-      - @events.each do |event|
+      - @future_events.each do |event|
         = link_to event.name, event_path(event)
         %br
         .fine

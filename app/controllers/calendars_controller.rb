@@ -17,6 +17,9 @@ class CalendarsController < ApplicationController
       @events = @calendar.events.flat_map do |event|
         event.calendar_events(params.fetch(:start_time, Time.current).to_date)
       end
+      @future_events = @calendar.events.not_yet_happened.flat_map do |event|
+        event.calendar_events(params.fetch(:start_time, Time.current).to_date)
+      end
     end
   end
 
