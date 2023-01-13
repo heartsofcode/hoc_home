@@ -11,11 +11,11 @@ class CalendarsController < ApplicationController
     @other_calendars = Calendar.where.not(id: @calendar.id)
     if @calendar.show_all_events?
       @events = Event.all.flat_map do |event|
-        event.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
+        event.calendar_events(params.fetch(:start_time, Time.current).to_date)
       end
     else
       @events = @calendar.events.flat_map do |event|
-        event.calendar_events(params.fetch(:start_date, Time.zone.now).to_date)
+        event.calendar_events(params.fetch(:start_time, Time.current).to_date)
       end
     end
   end

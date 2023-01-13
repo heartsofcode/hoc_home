@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'simple_calendar', '~> 2.0'
+gem 'simple_calendar', '~> 2.4'
 gem 'recurring_select', '~> 2.1'
 
 # To extract the image dimensions
