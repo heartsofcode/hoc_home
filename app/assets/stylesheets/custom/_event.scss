@@ -4,20 +4,10 @@ a {
   color: black;
 }
 
-#eventlist {
-  list-style:none;
-}
-
 #eventlist li {
-  list-style:none;
   padding:3px;
   border-bottom:2px solid #eee;
 }
-
-.eventtitle {
-  font-size: 2em;
-}
-
 .pagination li > a {
   color: #999;
 }
