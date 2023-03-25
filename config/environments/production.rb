@@ -17,7 +17,6 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
-  config.secret_key_base = ENV['SECRET_KEY_BASE']
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -48,7 +47,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -65,12 +64,6 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "hoc_home_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = {
-    host: "heartofcode.org",
-    protocol: "https"
-  }
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.perform_deliveries = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
