@@ -2,15 +2,11 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  # GET /events
-  # GET /events.json
   def index
     @events = Event.not_yet_happened.order("start_time ASC")
     @hoc_events = Calendar.find(1).events
   end
 
-  # GEmeT /events/1
-  # GET /events/1.json
   def show
     begin
       @time = Time.parse(params[:time])
@@ -19,17 +15,13 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /events/new
   def new
     @event = Event.new
   end
 
-  # GET /events/1/edit
   def edit
   end
 
-  # POST /events
-  # POST /events.json
   def create
     @event = Event.new(event_params)
 
@@ -44,8 +36,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -58,8 +48,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /events/1
-  # DELETE /events/1.json
   def destroy
     @event.destroy
     respond_to do |format|
