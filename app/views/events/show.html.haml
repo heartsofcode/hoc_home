@@ -1,43 +1,41 @@
 %p#notice= notice
 
-%p
-  %h1
+.center-text
+  %h1 
     = @event.name
-%p
-  - if @event.location_url?
-    %a{href: @event.location_url}
+  %p
+    - if @event.location_url?
+      %a{href: @event.location_url}
+        = @event.location
+    - else
       = @event.location
-  - else
-    = @event.location
-%p
-  - if @event.recurring?
-    = @event.rule.to_s
-  - else
-    %b
-      = prettify(@event)[0]
-  um
-  %strong
-    = prettify(@event)[1]
-
-  - if prettify(@event)[0] == prettify(@event)[2]
-    bis
-
-  - else
-    bis
-    %strong
-      = prettify(@event)[2]
+  %p
+    - if @event.recurring?
+      = @event.rule.to_s
+    - else
+      %b
+        = prettify(@event)[0]
     um
-  %strong
-    = prettify(@event)[3]
-%p.spacer-m
-  = @event.description
-%p
-  Im Kalender
-  = link_to "#{@event.calendar.name}", calendar_path(@event.calendar)
+    %strong
+      = prettify(@event)[1]
 
-- if user_signed_in?
-  = link_to 'Edit', edit_event_path
-  \|
-  = link_to "Delete", event_path(@event), method: :delete
-  %br
-= link_to 'All Events', events_path
+    bis
+    - if prettify(@event)[0] != prettify(@event)[2]
+      %strong
+        = prettify(@event)[2]
+      um
+    %strong
+      = prettify(@event)[3]
+  %p.spacer-m
+    = @event.description
+  %p
+    Im Kalender
+    = link_to "#{@event.calendar.name}", calendar_path(@event.calendar)
+
+  %p
+    - if user_signed_in?
+      = link_to 'Edit', edit_event_path
+      \|
+      = link_to "Delete", event_path(@event), method: :delete
+      %br
+    = link_to 'All Events', events_path
